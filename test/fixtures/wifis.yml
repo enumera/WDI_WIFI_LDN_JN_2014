@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  password: MyString
+  free_or_paid: false
+  share_scope: MyString
+  business_name: MyString
+  address_line_1: MyString
+  address_line_2: MyString
+  city: MyString
+  postcode: MyString
+  country: MyString
+  phone: 1
+
+two:
+  name: MyString
+  password: MyString
+  free_or_paid: false
+  share_scope: MyString
+  business_name: MyString
+  address_line_1: MyString
+  address_line_2: MyString
+  city: MyString
+  postcode: MyString
+  country: MyString
+  phone: 1

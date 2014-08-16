@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  wifi_id: 1
+  comment: MyText
+  stability: 1
+  signal_strength: 1
+  speed: 1
+  quietness: 1
+  overall_rating: 1
+  food: 1
+  toilet: 1
+  power_point_availability: 1
+  rough_number_of_seats: 1
+  reservation_possible: false
+
+two:
+  user_id: 1
+  wifi_id: 1
+  comment: MyText
+  stability: 1
+  signal_strength: 1
+  speed: 1
+  quietness: 1
+  overall_rating: 1
+  food: 1
+  toilet: 1
+  power_point_availability: 1
+  rough_number_of_seats: 1
+  reservation_possible: false

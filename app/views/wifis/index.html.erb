@@ -1,0 +1,43 @@
+<h1>Listing wifis</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Password</th>
+    <th>Free or paid</th>
+    <th>Share scope</th>
+    <th>Business name</th>
+    <th>Address line 1</th>
+    <th>Address line 2</th>
+    <th>City</th>
+    <th>Postcode</th>
+    <th>Country</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @wifis.each do |wifi| %>
+  <tr>
+    <td><%= wifi.name %></td>
+    <td><%= wifi.password %></td>
+    <td><%= wifi.free_or_paid %></td>
+    <td><%= wifi.share_scope %></td>
+    <td><%= wifi.business_name %></td>
+    <td><%= wifi.address_line_1 %></td>
+    <td><%= wifi.address_line_2 %></td>
+    <td><%= wifi.city %></td>
+    <td><%= wifi.postcode %></td>
+    <td><%= wifi.country %></td>
+    <td><%= wifi.phone %></td>
+    <td><%= link_to 'Show', wifi %></td>
+    <td><%= link_to 'Edit', edit_wifi_path(wifi) %></td>
+    <td><%= link_to 'Destroy', wifi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wifi', new_wifi_path %>

@@ -1,4 +1,10 @@
 WifiJnLdn2014Psql::Application.routes.draw do
+  resources :reviews
+
+
+  resources :wifis
+
+
   get "home/index"
 
    devise_scope :user do

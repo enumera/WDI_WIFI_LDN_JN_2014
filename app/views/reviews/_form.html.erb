@@ -1,0 +1,69 @@
+<%= form_for(@review) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :wifi_id %><br />
+    <%= f.number_field :wifi_id %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </div>
+  <div class="field">
+    <%= f.label :stability %><br />
+    <%= f.number_field :stability %>
+  </div>
+  <div class="field">
+    <%= f.label :signal_strength %><br />
+    <%= f.number_field :signal_strength %>
+  </div>
+  <div class="field">
+    <%= f.label :speed %><br />
+    <%= f.number_field :speed %>
+  </div>
+  <div class="field">
+    <%= f.label :quietness %><br />
+    <%= f.number_field :quietness %>
+  </div>
+  <div class="field">
+    <%= f.label :overall_rating %><br />
+    <%= f.number_field :overall_rating %>
+  </div>
+  <div class="field">
+    <%= f.label :food %><br />
+    <%= f.number_field :food %>
+  </div>
+  <div class="field">
+    <%= f.label :toilet %><br />
+    <%= f.number_field :toilet %>
+  </div>
+  <div class="field">
+    <%= f.label :power_point_availability %><br />
+    <%= f.number_field :power_point_availability %>
+  </div>
+  <div class="field">
+    <%= f.label :rough_number_of_seats %><br />
+    <%= f.number_field :rough_number_of_seats %>
+  </div>
+  <div class="field">
+    <%= f.label :reservation_possible %><br />
+    <%= f.check_box :reservation_possible %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
