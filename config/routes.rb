@@ -1,4 +1,10 @@
 WifiJnLdn2014Psql::Application.routes.draw do
+   devise_scope :user do
+    get "/login", to: "devise/sessions#new"
+  end 
+
+
+
   devise_for :users
 
   # The priority is based upon order of creation:
