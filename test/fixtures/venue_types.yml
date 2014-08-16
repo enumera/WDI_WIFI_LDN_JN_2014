@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  wifi_id: 1
+  type: 
+
+two:
+  wifi_id: 1
+  type: 
