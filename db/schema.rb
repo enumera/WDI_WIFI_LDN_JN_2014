@@ -11,7 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140816124654) do
+ActiveRecord::Schema.define(:version => 20140816145703) do
+
+  create_table "opening_times", :force => true do |t|
+    t.integer  "wifi_id"
+    t.string   "day"
+    t.time     "open"
+    t.time     "close"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "wifi_id"
+    t.text     "comment"
+    t.integer  "stability"
+    t.integer  "signal_strength"
+    t.integer  "speed"
+    t.integer  "quietness"
+    t.integer  "overall_rating"
+    t.integer  "food"
+    t.integer  "toilet"
+    t.integer  "power_point_availability"
+    t.integer  "rough_number_of_seats"
+    t.boolean  "reservation_possible"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "user_types", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -26,9 +60,41 @@ ActiveRecord::Schema.define(:version => 20140816124654) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "first"
+    t.string   "last"
+    t.date     "dob"
+    t.boolean  "sex"
+    t.string   "occupation"
+    t.string   "position"
+    t.text     "image"
+    t.string   "role"
+    t.integer  "phone"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "venue_types", :force => true do |t|
+    t.integer  "wifi_id"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "wifis", :force => true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.boolean  "free_or_paid"
+    t.string   "share_scope"
+    t.string   "business_name"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "city"
+    t.string   "postcode"
+    t.string   "country"
+    t.integer  "phone"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
 end
