@@ -1,4 +1,7 @@
 WifiJnLdn2014Psql::Application.routes.draw do
+  resources :groups
+
+
   resources :reviews
 
 
