@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-WifiJnLdn2014::Application.initialize!
+WifiJnLdn2014Psql::Application.initialize!

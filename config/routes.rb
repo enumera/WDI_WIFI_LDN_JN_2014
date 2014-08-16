@@ -1,4 +1,4 @@
-WifiJnLdn2014::Application.routes.draw do
+WifiJnLdn2014Psql::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

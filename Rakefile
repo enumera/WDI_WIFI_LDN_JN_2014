@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-WifiJnLdn2014::Application.load_tasks
+WifiJnLdn2014Psql::Application.load_tasks
