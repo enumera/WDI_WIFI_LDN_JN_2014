@@ -17,8 +17,7 @@ development:
   encoding: unicode
   database: Wifi_JN_LDN_2014_PSQL_development
   pool: 5
-  username: Wifi_JN_LDN_2014_PSQL
-  password:
+
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -43,13 +42,11 @@ test:
   encoding: unicode
   database: Wifi_JN_LDN_2014_PSQL_test
   pool: 5
-  username: Wifi_JN_LDN_2014_PSQL
-  password:
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: Wifi_JN_LDN_2014_PSQL_production
   pool: 5
-  username: Wifi_JN_LDN_2014_PSQL
-  password:
+  
