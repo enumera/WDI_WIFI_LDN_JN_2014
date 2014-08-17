@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @wifi.name %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @wifi.password %>
+</p>
+
+<p>
+  <b>Free or paid:</b>
+  <%= @wifi.free_or_paid %>
+</p>
+
+<p>
+  <b>Share scope:</b>
+  <%= @wifi.share_scope %>
+</p>
+
+<p>
+  <b>Business name:</b>
+  <%= @wifi.business_name %>
+</p>
+
+<p>
+  <b>Address line 1:</b>
+  <%= @wifi.address_line_1 %>
+</p>
+
+<p>
+  <b>Address line 2:</b>
+  <%= @wifi.address_line_2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @wifi.city %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%= @wifi.postcode %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @wifi.country %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @wifi.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_wifi_path(@wifi) %> |
+<%= link_to 'Back', wifis_path %>

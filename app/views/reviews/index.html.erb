@@ -1,0 +1,47 @@
+<h1>Listing reviews</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Wifi</th>
+    <th>Comment</th>
+    <th>Stability</th>
+    <th>Signal strength</th>
+    <th>Speed</th>
+    <th>Quietness</th>
+    <th>Overall rating</th>
+    <th>Food</th>
+    <th>Toilet</th>
+    <th>Power point availability</th>
+    <th>Rough number of seats</th>
+    <th>Reservation possible</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reviews.each do |review| %>
+  <tr>
+    <td><%= review.user_id %></td>
+    <td><%= review.wifi_id %></td>
+    <td><%= review.comment %></td>
+    <td><%= review.stability %></td>
+    <td><%= review.signal_strength %></td>
+    <td><%= review.speed %></td>
+    <td><%= review.quietness %></td>
+    <td><%= review.overall_rating %></td>
+    <td><%= review.food %></td>
+    <td><%= review.toilet %></td>
+    <td><%= review.power_point_availability %></td>
+    <td><%= review.rough_number_of_seats %></td>
+    <td><%= review.reservation_possible %></td>
+    <td><%= link_to 'Show', review %></td>
+    <td><%= link_to 'Edit', edit_review_path(review) %></td>
+    <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Review', new_review_path %>

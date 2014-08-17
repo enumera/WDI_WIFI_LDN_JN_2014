@@ -1,0 +1,61 @@
+<%= form_for(@wifi) do |f| %>
+  <% if @wifi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wifi.errors.count, "error") %> prohibited this wifi from being saved:</h2>
+
+      <ul>
+      <% @wifi.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :free_or_paid %><br />
+    <%= f.check_box :free_or_paid %>
+  </div>
+  <div class="field">
+    <%= f.label :share_scope %><br />
+    <%= f.text_field :share_scope %>
+  </div>
+  <div class="field">
+    <%= f.label :business_name %><br />
+    <%= f.text_field :business_name %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_1 %><br />
+    <%= f.text_field :address_line_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_2 %><br />
+    <%= f.text_field :address_line_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @review.user_id %>
+</p>
+
+<p>
+  <b>Wifi:</b>
+  <%= @review.wifi_id %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @review.comment %>
+</p>
+
+<p>
+  <b>Stability:</b>
+  <%= @review.stability %>
+</p>
+
+<p>
+  <b>Signal strength:</b>
+  <%= @review.signal_strength %>
+</p>
+
+<p>
+  <b>Speed:</b>
+  <%= @review.speed %>
+</p>
+
+<p>
+  <b>Quietness:</b>
+  <%= @review.quietness %>
+</p>
+
+<p>
+  <b>Overall rating:</b>
+  <%= @review.overall_rating %>
+</p>
+
+<p>
+  <b>Food:</b>
+  <%= @review.food %>
+</p>
+
+<p>
+  <b>Toilet:</b>
+  <%= @review.toilet %>
+</p>
+
+<p>
+  <b>Power point availability:</b>
+  <%= @review.power_point_availability %>
+</p>
+
+<p>
+  <b>Rough number of seats:</b>
+  <%= @review.rough_number_of_seats %>
+</p>
+
+<p>
+  <b>Reservation possible:</b>
+  <%= @review.reservation_possible %>
+</p>
+
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>
