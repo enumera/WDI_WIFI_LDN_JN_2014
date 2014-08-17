@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OpeningTimesTest < ActiveSupport::TestCase
+class OpeningTimeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

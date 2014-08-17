@@ -3,6 +3,7 @@ class Wifi < ActiveRecord::Base
 
   belongs_to :venue_type
   has_many :reviews
+  has_many :opening_times
 
 
 end
