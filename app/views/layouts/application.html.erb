@@ -15,6 +15,7 @@
     <div class="header-divs" id="header-div1">WIFI NEAR ME</div>
     <div class="header-divs" id="header-div2">W<i class="flaticon-wifi42"></i>FIND</div>
     <div class="header-divs" id="header-div3">
+      
       <% if user_signed_in? %>
         <%= current_user.email %>
        
@@ -24,9 +25,9 @@
 
       <% else %>
 
-        <%= link_to "LOGIN", login_path %>
-        /
+        <%= link_to "SIGN IN", login_path %>
         <%=link_to "SIGN UP", new_user_registration_path %>
+        <%= link_to "SIGN IN WITH GOOGLE", user_omniauth_authorize_path(:google_oauth2)%>
 
        <% end %>
 
@@ -34,11 +35,6 @@
     <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-
-      <%=link_to "Sign up", new_user_registration_path %>
-      <br>
-      <%= link_to "Login", login_path %>
-      <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)%>
 
       <%= yield %>
 

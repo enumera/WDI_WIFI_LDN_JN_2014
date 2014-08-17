@@ -25,13 +25,22 @@ html, body {
   width: 33.33%;
 }
 
+#header-div1, #header-div3 {
+  padding: 15px 20px 0;
+}
+
 #header-div2 {
   font-size: 60px;
   padding-top: 40px;
 }
 
-#header-div1, #header-div3 {
-  line-height: 10vh;
+#header-div1 {
+  line-height: 9vh;
+  padding: 15px 20px 0;
+}
+
+#header-div3 {
+  line-height: 5vh;
   padding: 15px 20px 0;
 }
 
@@ -76,6 +85,9 @@ p {
   margin: 0;
   padding: 0;
 }
+
+
+
 
 /*@media only screen and (max-width: 720px) {
   #wrapper {
