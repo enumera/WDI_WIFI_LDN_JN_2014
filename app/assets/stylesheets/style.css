@@ -55,6 +55,7 @@ html, body {
 main {
   min-height: 95vh;
   color: #1f8dd6;
+  font-size: 20px;
 }
 
 .FOOTER-DIV {
@@ -97,6 +98,15 @@ main h1 {
   padding-top: 10px;
 }
 
+label, input {
+  font-size: 20px;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+
 /*@media only screen and (max-width: 720px) {
   #wrapper {
     width: 100%;
@@ -129,9 +139,4 @@ main h1 {
   }
   
 }
-
-
-
-
-
-*/*/
+*/
