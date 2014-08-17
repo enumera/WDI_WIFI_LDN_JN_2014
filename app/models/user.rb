@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   belongs_to :user_type
-  has_many :reviews
   has_and_belongs_to_many :groups
+  has_many :reviews
   
 end
