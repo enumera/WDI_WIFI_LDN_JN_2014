@@ -25,6 +25,10 @@ html, body {
   width: 33.33%;
 }
 
+.header-divs a:visited {
+  color: white;
+}
+
 #header-div1, #header-div3 {
   padding: 15px 20px 0;
 }
@@ -50,6 +54,7 @@ html, body {
 
 main {
   min-height: 95vh;
+  color: #1f8dd6;
 }
 
 .FOOTER-DIV {
@@ -78,7 +83,7 @@ a:hover {
 }
 
 a:visited {
-  color: white;
+  color: #1f8dd6;
 }
 
 p {
@@ -86,8 +91,11 @@ p {
   padding: 0;
 }
 
-
-
+main h1 {
+  display: inline-block;
+  font-weight: 300;
+  padding-top: 10px;
+}
 
 /*@media only screen and (max-width: 720px) {
   #wrapper {
@@ -108,7 +116,7 @@ p {
     font-size: 50px;
     padding-top: 10px;
   }
-}*/
+}
 /*
 @media only screen and (max-width: 460px) {
   .page-wrap {
@@ -120,9 +128,10 @@ p {
     width: 100%;
   }
   
-}*/
+}
 
 
 
 
 
+*/*/

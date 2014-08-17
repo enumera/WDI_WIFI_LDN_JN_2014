@@ -21,12 +21,16 @@
   </div>
   <div class="field">
     <%= f.label :free_or_paid %><br />
-    <%= f.check_box :free_or_paid %>
+    <%= f.select :free_or_paid, options_for_select([:Free, :Paid]) %>
   </div>
   <div class="field">
     <%= f.label :share_scope %><br />
-    <%= f.text_field :share_scope %>
+    <%= f.select :share_scope, options_for_select([:Private, :Public, :"Share with groups"]) %>
   </div>
+  <!-- <div class="field">
+    <%= f.label :venue_type %><br />
+    <%= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
+  </div> -->
   <div class="field">
     <%= f.label :business_name %><br />
     <%= f.text_field :business_name %>
@@ -55,6 +59,9 @@
     <%= f.label :phone %><br />
     <%= f.number_field :phone %>
   </div>
+  Reviews: ratings and comments
+  
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
