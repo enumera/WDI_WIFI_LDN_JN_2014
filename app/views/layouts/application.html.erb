@@ -28,22 +28,19 @@
         /
         <%=link_to "SIGN UP", new_user_registration_path %>
 
+       <% end %>
 
-      <% end %>
     </div>
     <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
-    <%=link_to "Sign up", new_user_registration_path %>
-    <br>
-    <%= link_to "Login", login_path %>
-    <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)%>
+      <%=link_to "Sign up", new_user_registration_path %>
+      <br>
+      <%= link_to "Login", login_path %>
+      <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2)%>
 
-   
-  <% end %>
-
-<%= yield %>
+      <%= yield %>
 
     </main>
     <div class="FOOTER-DIV">HOME</div>
