@@ -27,11 +27,11 @@ html, body {
 
 #header-div2 {
   font-size: 60px;
-  padding: 5px 20px 0;
+  padding-top: 40px;
 }
 
 #header-div1, #header-div3 {
-  line-height: 9vh;
+  line-height: 10vh;
   padding: 15px 20px 0;
 }
 
@@ -61,6 +61,14 @@ main {
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  background: none;
+}
+
+a:visited {
   color: white;
 }
 
