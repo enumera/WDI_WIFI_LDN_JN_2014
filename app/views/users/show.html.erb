@@ -1,13 +1,27 @@
-<h1><%= @user.first %></h1>
-<h1><%= @user.last %></h1>
-
-<div class="profile-image"><%= image_tag @user.image.detail.url, width: 400 %></div>
-
-<div class="profile-container">
+<section>
+  <div class="profile-header">
+    MY PROFILE PAGE:
+    <br>
+    <br>
+    <br>
+    <%= @user.first.upcase %>
+    <%= @user.last.upcase %>
+  </div>
+  <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
+</section>
+<section class="profile-container">
   <div class="profile-div">MY NETWORK:</div>
+  <div class="accordian">
+    <h4></h4>
+  </div>
   <div class="add-more">ADD NETWORK</div>
-</div>
-<div class="profile-container">
+
+</section>
+<section class="profile-container">
   <div class="profile-div">MY GROUPS:</div>
+  <div class="accordian"> 
+    <h4></h4>
+  </div>
   <div class="add-more">ADD GROUP</div>
-</div>
+
+</section>
