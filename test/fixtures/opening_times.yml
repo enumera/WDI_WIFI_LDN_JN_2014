@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  wifi_id: 1
   day: MyString
-  open: 2014-08-16 15:44:21
-  close: 2014-08-16 15:44:21
+  close: 2014-08-17 08:49:39
+  open: 
+  wifi_id: 1
 
 two:
-  wifi_id: 1
   day: MyString
-  open: 2014-08-16 15:44:21
-  close: 2014-08-16 15:44:21
+  close: 2014-08-17 08:49:39
+  open: 
+  wifi_id: 1
