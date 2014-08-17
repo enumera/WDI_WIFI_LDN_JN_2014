@@ -1,3 +1,5 @@
 class VenueType < ActiveRecord::Base
-  attr_accessible :type, :wifi_id
+  attr_accessible :name
+
+  has_many :wifis
 end
