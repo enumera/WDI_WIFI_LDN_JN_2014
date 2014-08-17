@@ -9,6 +9,10 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'carrierwave'
+
+gem 'rmagick', :require => 'RMagick'
+
 
 
 # Gems used only for assets and not required
