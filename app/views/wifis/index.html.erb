@@ -20,7 +20,7 @@
 
 <% @wifis.each do |wifi| %>
   <tr>
-    <td><%= wifi.name %></td>
+    <td><%= link_to(wifi.name, wifi) %></td>
     <td><%= wifi.password %></td>
     <td><%= wifi.free_or_paid %></td>
     <td><%= wifi.share_scope %></td>
@@ -30,10 +30,7 @@
     <td><%= wifi.city %></td>
     <td><%= wifi.postcode %></td>
     <td><%= wifi.country %></td>
-    <td><%= wifi.phone %></td>
-    <td><%= link_to 'Show', wifi %></td>
-    <td><%= link_to 'Edit', edit_wifi_path(wifi) %></td>
-    <td><%= link_to 'Destroy', wifi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= wifi.phone %></td> 
   </tr>
 <% end %>
 </table>
