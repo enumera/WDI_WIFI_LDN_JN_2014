@@ -13,14 +13,11 @@ WifiJnLdn2014Psql::Application.routes.draw do
    devise_scope :user do
     get "/login", to: "devise/sessions#new"
   end 
-<<<<<<< HEAD
-  
-=======
+
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
->>>>>>> Oauth
-  devise_for :users
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
