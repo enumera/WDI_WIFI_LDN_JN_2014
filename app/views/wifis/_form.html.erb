@@ -11,87 +11,87 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :free_or_paid %><br />
-    <%= f.select :free_or_paid, options_for_select([:Free, :Paid]) %>
-  </div>
-  <div class="field">
-    <%= f.label :share_scope %><br />
-    <%= f.select :share_scope, options_for_select([:Private, :Public, :"Share with groups"]) %>
+  <div id="leftdiv"> 
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.text_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :free_or_paid %><br />
+      <%= f.select :free_or_paid, options_for_select([:Free, :Paid]) %>
+    </div>
+    <div class="field">
+      <%= f.label :share_scope %><br />
+      <%= f.select :share_scope, options_for_select([:Private, :Public, :"Share with groups"]) %>
 
-  </div>
-  <div class="field">
-    <%#= f.label :venue_type %><br />
-    <%#= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
+    </div>
+    <div class="field">
+      <%#= f.label :venue_type %><br />
+      <%#= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
 
+    </div>
+    <!-- <div class="field">
+      <%= f.label :venue_type %><br />
+      <%= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
+    </div> -->
+    <div class="field">
+      <%= f.label :business_name %><br />
+      <%= f.text_field :business_name %>
+    </div>
+    <div class="field">
+      <%= f.label :address_line_1 %><br />
+      <%= f.text_field :address_line_1 %>
+    </div>
+    <div class="field">
+      <%= f.label :address_line_2 %><br />
+      <%= f.text_field :address_line_2 %>
+    </div>
+    <div class="field">
+      <%= f.label :city %><br />
+      <%= f.text_field :city %>
+    </div>
+    <div class="field">
+      <%= f.label :postcode %><br />
+      <%= f.text_field :postcode %>
+    </div>
+    <div class="field">
+      <%= f.label :country %><br />
+      <%= f.text_field :country %>
+    </div>
+    <div class="field">
+      <%= f.label :phone %><br />
+      <%= f.number_field :phone %>
+    </div>
   </div>
-  <!-- <div class="field">
-    <%= f.label :venue_type %><br />
-    <%= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
-  </div> -->
-  <div class="field">
-    <%= f.label :business_name %><br />
-    <%= f.text_field :business_name %>
+    
+  <div id="rightdiv">
+    <h3>Reviews: ratings and comments</h3>
+    <div class="field">
+      <%#= f.label :power_point_availability %><br />
+      <%#= f.text_field :power_point_availability %>
+    </div>
+    <div class="field">
+      <%#= f.label :quietness %><br />
+      <%#= f.text_field :quietness %>
+    </div>
+    <div class="field">
+      <%#= f.label :signal_strength %><br />
+      <%#= f.text_field :signal_strength %>
+    </div>
+    <div class="field">
+      <%#= f.label :speed %><br />
+      <%#= f.text_field :speed %>
+    </div>
+    <div class="field">
+      <%#= f.label :stability %><br />
+      <%#= f.text_field :stability %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :address_line_1 %><br />
-    <%= f.text_field :address_line_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :address_line_2 %><br />
-    <%= f.text_field :address_line_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :postcode %><br />
-    <%= f.text_field :postcode %>
-  </div>
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.number_field :phone %>
-  </div>
-<<<<<<< HEAD
-  <h3>Reviews: ratings and comments</h3>
-  <div class="field">
-    <%#= f.label :power_point_availability %><br />
-    <%#= f.text_field :power_point_availability %>
-  </div>
-  <div class="field">
-    <%#= f.label :quietness %><br />
-    <%#= f.text_field :quietness %>
-  </div>
-  <div class="field">
-    <%#= f.label :signal_strength %><br />
-    <%#= f.text_field :signal_strength %>
-  </div>
-  <div class="field">
-    <%#= f.label :speed %><br />
-    <%#= f.text_field :speed %>
-  </div>
-  <div class="field">
-    <%#= f.label :stability %><br />
-    <%#= f.text_field :stability %>
-  </div>
-=======
-  Reviews: ratings and comments
   
- 
->>>>>>> wifi_new_edit_pages
   <div class="actions">
     <%= f.submit %>
   </div>
