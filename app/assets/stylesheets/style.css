@@ -223,4 +223,12 @@ tr {
   clear: left;
 }
 
+.user-form {
+  width:600px;
+  float: left;
+}
 
+.new-user-side {
+  width: 66.5%;
+  float: right;
+}
