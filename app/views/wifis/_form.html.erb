@@ -26,11 +26,17 @@
   <div class="field">
     <%= f.label :share_scope %><br />
     <%= f.select :share_scope, options_for_select([:Private, :Public, :"Share with groups"]) %>
+
   </div>
   <div class="field">
     <%#= f.label :venue_type %><br />
     <%#= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
+
   </div>
+  <!-- <div class="field">
+    <%= f.label :venue_type %><br />
+    <%= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
+  </div> -->
   <div class="field">
     <%= f.label :business_name %><br />
     <%= f.text_field :business_name %>
@@ -59,6 +65,7 @@
     <%= f.label :phone %><br />
     <%= f.number_field :phone %>
   </div>
+<<<<<<< HEAD
   <h3>Reviews: ratings and comments</h3>
   <div class="field">
     <%#= f.label :power_point_availability %><br />
@@ -80,6 +87,11 @@
     <%#= f.label :stability %><br />
     <%#= f.text_field :stability %>
   </div>
+=======
+  Reviews: ratings and comments
+  
+ 
+>>>>>>> wifi_new_edit_pages
   <div class="actions">
     <%= f.submit %>
   </div>
