@@ -1,32 +1,49 @@
-<div>
-    <%= form_for @user do |f| %>
+<div id="user-form-left">
+    <%= form_for(@user) do |f| %>
+    <div class="field">
     <%= f.label :first %>
     <%= f.text_field :first %>
-    <br>
+  </div>
+  <div class="field">
     <%= f.label :last %>
     <%= f.text_field :last %>
-    <p><strong>I need to have the date javascript or jquery here</strong></p>
+  </div>
+  <div class="field">
     <%= f.label :dob %>
     <%= f.text_field :dob %>
-    <p><strong>I need to have the boolean set up properly here</strong></p>
+  </div>
+  <div class="field">
     <%= f.label :sex %>
-    <%= f.select :sex, options_for_select([:true, :false]) %>
-    <br>
+    <%= f.select :sex, options_for_select([:Male, :Female]) %>
+  </div>
+  <div class="field">
     <%= f.label :occupation %>
     <%= f.text_field :occupation %>
-    <br>
+  </div>
+  <div class="field">
     <%= f.label :position %>
     <%= f.text_field :position %>
-    <br>
+  </div>
+  <div class="field">
     <%= f.label :image %>
     <%= f.file_field :image %>
-    <p><strong>Determine the roles here</strong></p>
+  </div>
+  <div class="field">
     <%= f.label :role %>
     <%= f.select :role, options_for_select([:default, :other]) %>
-    <p><strong>Validate data maybe like no empty spaces etc.</strong></p>
+  </div>
+  <div class="field">
     <%= f.label :phone %>
     <%= f.text_field :phone %>
-    <br>
+  </div>
+  <div class="action">
     <%= f.submit %>
     <% end %>
+  </div>
+</div>
+
+<div id="user-form-right">
+<div class="profile-div user-side">ADD NETWORK</div>
+
+<div class="profile-div user-side">ADD GROUP</div>
 </div>

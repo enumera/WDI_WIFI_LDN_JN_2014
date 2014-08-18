@@ -183,6 +183,10 @@ tr {
   float: right;
 }
 
+.profile-summary {
+  float: left;
+}
+
 .profile-container {
   width: 960px;
   margin: 0 auto;
@@ -218,4 +222,12 @@ tr {
   clear: left;
 }
 
+.user-form {
+  width:600px;
+  float: left;
+}
 
+.new-user-side {
+  width: 66.5%;
+  float: right;
+}
