@@ -2,7 +2,8 @@ class WifisController < ApplicationController
   # GET /wifis
   # GET /wifis.json
   def index
-    @wifis = Wifi.all
+     @wifis = Wifi.order(:created_at).page(params[:page])
+    # @wifis = Wifi.all
 
     respond_to do |format|
       format.html # index.html.erb

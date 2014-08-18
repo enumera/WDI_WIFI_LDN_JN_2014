@@ -1,4 +1,10 @@
 WifiJnLdn2014Psql::Application.routes.draw do
+  
+  resources :wifis do
+    get 'page/:page', action: :index, on: :collection
+  end
+
+
   resources :groups
 
 
