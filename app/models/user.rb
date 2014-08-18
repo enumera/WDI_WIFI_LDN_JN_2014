@@ -21,8 +21,8 @@ def self.find_for_google_oauth2(auth, signed_in_user=nil)
   if user = signed_in_user || User.find_by_email(auth.info.email)
     user.provider = auth.provider
     user.uid = auth.uid
-    user.name = auth.info.name if user.name.blank?
-    user.image = auth.info.image if user.image.blank?
+    # user.name = auth.info.name if user.name.blank?
+    # user.image = auth.info.image if user.image.blank?
     user.save
     user
   else
