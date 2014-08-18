@@ -14,7 +14,16 @@
   </div>
   <div class="field">
     <%= f.label :sex %>
+
     <%= f.select :sex, options_for_select([:Male, :Female]) %>
+  </div>
+  <div class="field">
+  
+    
+    <%=f.label :user_type_id %>
+    <%=f.collection_select :user_type_id, UserType.all, :id, :name %>
+
+    
   </div>
   <div class="field">
     <%= f.label :occupation %>
