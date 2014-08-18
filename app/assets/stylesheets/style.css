@@ -151,7 +151,9 @@ tr {
     padding-top: 10px;
   }
 }
+
 /*
+
 @media only screen and (max-width: 460px) {
   .page-wrap {
     width: 100%;
@@ -162,5 +164,59 @@ tr {
     width: 100%;
   }
   
+
 }
 */
+
+}*/
+
+.profile-header {
+  text-align: center; 
+  color: black;
+  font-weight: 100;
+  font-size: 60px;
+  padding: 0px;
+  margin-top: 0px;
+  float: left;
+}
+
+.profile-image {
+  float: right;
+}
+
+.profile-container {
+  width: 960px;
+  margin: 0 auto;
+  clear: both;
+}
+
+.profile-div {
+  width: 66.5%;
+  text-align: center; 
+  background: #1f8dd6;
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+.add-more {
+  width: 33%;
+  text-align: center; 
+  background: #1f8dd6;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  float: right;
+}
+
+.accordian {
+  width: 66.5%;
+  clear: left;
+}
+
+

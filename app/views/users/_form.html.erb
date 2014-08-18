@@ -1,0 +1,32 @@
+<div>
+    <%= form_for @user do |f| %>
+    <%= f.label :first %>
+    <%= f.text_field :first %>
+    <br>
+    <%= f.label :last %>
+    <%= f.text_field :last %>
+    <p><strong>I need to have the date javascript or jquery here</strong></p>
+    <%= f.label :dob %>
+    <%= f.text_field :dob %>
+    <p><strong>I need to have the boolean set up properly here</strong></p>
+    <%= f.label :sex %>
+    <%= f.select :sex, options_for_select([:true, :false]) %>
+    <br>
+    <%= f.label :occupation %>
+    <%= f.text_field :occupation %>
+    <br>
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+    <br>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <p><strong>Determine the roles here</strong></p>
+    <%= f.label :role %>
+    <%= f.select :role, options_for_select([:default, :other]) %>
+    <p><strong>Validate data maybe like no empty spaces etc.</strong></p>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <br>
+    <%= f.submit %>
+    <% end %>
+</div>
