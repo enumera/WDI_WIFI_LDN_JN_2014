@@ -29,11 +29,11 @@ def self.find_for_google_oauth2(auth, signed_in_user=nil)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      user.name = auth.info.name
+      # user.name = auth.info.name
       user.email = auth.info.email
-      user.image = auth.info.image
+      # user.image = auth.info.image
       user.password = Devise.friendly_token[0,20]
-      user.skip_confirmation! # don't require email confirmation
+      # user.skip_confirmation! # don't require email confirmation
     end
   end
 end
