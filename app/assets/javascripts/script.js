@@ -1,5 +1,22 @@
+
+// createMap
+
+
+
 $(document).ready(function(){
+
+   console.log("hai");
+  $( "#accordion-wifi" ).accordion();
+  $( "#accordion-group" ).accordion();
   console.log('Page reload!')
+  
+  // createConsole()
+  // createMap() 
+ 
+
+
+
+
   var mapOptions, canvas, map;
 
   //Autocomplete /search variables
