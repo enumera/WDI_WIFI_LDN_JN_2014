@@ -1,4 +1,4 @@
-<div>
+<div id="user-form-left">
     <%= form_for(@user) do |f| %>
     <div class="field">
     <%= f.label :first %>
@@ -39,9 +39,11 @@
   <div class="action">
     <%= f.submit %>
     <% end %>
+  </div>
 </div>
 
+<div id="user-form-right">
 <div class="profile-div user-side">ADD NETWORK</div>
 
 <div class="profile-div user-side">ADD GROUP</div>
-
+</div>
