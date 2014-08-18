@@ -1,9 +1,9 @@
 <section>
   <div class="profile-header">
-    MY PROFILE PAGE:
+    <h1>MY PROFILE PAGE:</h1>
     <br>
-    <%= @user.first.upcase %>
-    <%= @user.last.upcase %>
+    <h1><%= @user.first.upcase %></h1>
+    <h1><%= @user.last.upcase %></h1>
   </div>
   <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
   <div class="profile-summary">
