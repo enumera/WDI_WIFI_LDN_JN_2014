@@ -12,6 +12,10 @@
     <%= f.label :sex %>
     <%= f.select :sex, options_for_select([:true, :false]) %>
     <br>
+    <%=f.label :user_type_id %>
+    <%=f.collection_select :user_type_id, UserType.all, :id, :name %>
+
+    <br>
     <%= f.label :occupation %>
     <%= f.text_field :occupation %>
     <br>

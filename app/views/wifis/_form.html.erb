@@ -29,8 +29,8 @@
 
   </div>
   <div class="field">
-    <%#= f.label :venue_type %><br />
-    <%#= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
+    <%= f.label :venue_type_id %><br >
+    <%= f.collection_select :venue_type_id, VenueType.all, :id, :name %>
 
   </div>
   <!-- <div class="field">
