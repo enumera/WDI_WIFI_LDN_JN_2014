@@ -2,8 +2,8 @@
   <div class="profile-header">
     <h1>MY PROFILE PAGE:</h1>
     <br>
-    <h1><%= @user.first.upcase %></h1>
-    <h1><%= @user.last.upcase %></h1>
+    <h1><%= @user.first %></h1>
+    <h1><%= @user.last %></h1>
   </div>
   <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
   <div class="profile-summary">

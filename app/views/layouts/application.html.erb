@@ -36,16 +36,23 @@
        </div>
 
     </div>
+
     <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
+    
       <%= yield %>
 
     </main>
-    <div class="FOOTER-DIV">HOME</div>
-    <div class="FOOTER-DIV">MY PROFILE</div>
-    <div class="FOOTER-DIV">ADD A WIFI</div>
+    <div class="FOOTER-DIV">
+      <%= link_to "HOME", root_path%>
+    </div>
+    <div class="FOOTER-DIV">
+      <%= link_to "MY PROFILE", user_path(current_user)%>
+    </div>
+    <div class="FOOTER-DIV">
+      <%= link_to "ADD A WIFI", new_wifi_path%></div>
   </div>
 </body>
 </html>

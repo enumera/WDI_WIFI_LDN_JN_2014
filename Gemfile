@@ -15,6 +15,8 @@ gem 'rmagick', :require => 'RMagick'
 
 gem 'omniauth-google-oauth2'
 
+gem 'ransack'
+
 group :development, :test do
   gem 'letter_opener'
   gem 'pry-rails'

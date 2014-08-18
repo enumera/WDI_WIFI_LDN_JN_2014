@@ -2,7 +2,10 @@ class WifisController < ApplicationController
   # GET /wifis
   # GET /wifis.json
   def index
-    @wifis = Wifi.all
+
+     @q = Wifi.search(params[:q])
+  @wifis = @q.result(distinct: true)
+    # @wifis = Wifi.all
 
     respond_to do |format|
       format.html # index.html.erb
