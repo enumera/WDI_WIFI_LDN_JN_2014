@@ -39,7 +39,7 @@
   <div class="profile-div">MY NETWORKS:</div>
   <div class="add-more">ADD NETWORK</div>
   <div class="accordian">
-    <%#  @wifis.each do |wifi| %>
+    <%  @wifis.each do |wifi| %>
     <h4>wifi.name</h4>
       <table>
         <tr>
@@ -79,7 +79,7 @@
           <td>country result</td>
         </tr>
       </table>
-    <%# end %>
+    <% end %>
   </div>
 
 </section>
@@ -88,7 +88,7 @@
   <div class="profile-div">MY GROUPS:</div>
   <div class="add-more">ADD GROUP</div>
   <div class="accordian">
-    <h4>group.name</h4>
+    <h4><%# = @user.group_ids.name =%></h4>
       <table>
         <tr>
           <td>photo</td>
