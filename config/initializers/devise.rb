@@ -255,8 +255,8 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   config.omniauth :google_oauth2,
-  ENV["GALLERY_APP_GOOGLE_CLIENT_ID"],
-  ENV["GALLERY_APP_GOOGLE_CLIENT_SECRET"],
+  ENV["GOOGLE_AUTH_CLIENT_ID"],
+  ENV["GOOGLE_AUTH_CLIENT_SECRET"],
   scope: 'email, profile',
   client_options: {
     image_aspect_ratio: "square",
