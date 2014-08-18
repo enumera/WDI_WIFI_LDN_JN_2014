@@ -184,6 +184,10 @@ tr {
   float: right;
 }
 
+.profile-summary {
+  float: left;
+}
+
 .profile-container {
   width: 960px;
   margin: 0 auto;

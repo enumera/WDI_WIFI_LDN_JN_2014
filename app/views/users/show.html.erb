@@ -2,12 +2,38 @@
   <div class="profile-header">
     MY PROFILE PAGE:
     <br>
-    <br>
-    <br>
     <%= @user.first.upcase %>
     <%= @user.last.upcase %>
   </div>
   <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
+  <div class="profile-summary">
+    <table>
+        <tr>
+          <td>Sex:</td>
+          <td><%= @user.sex %></td>
+        </tr>
+        <tr>
+          <td>DOB:</td>
+          <td><%= @user.dob %></td>
+        </tr>
+        <tr>
+          <td>Occupation:</td>
+          <td><%= @user.occupation %></td>
+        </tr>
+        <tr>
+          <td>Position:</td>
+          <td><%= @user.position %></td>
+        </tr>
+        </tr>
+          <td>Role</td>
+          <td><%= @user.role %></td>
+        <tr>
+        <tr>
+          <td>Phone number:</td>
+          <td><%= @user.phone %></td>
+        </tr>
+      </table>
+  </div>
 </section>
 <section class="profile-container">
   <div class="profile-div">MY NETWORK:</div>
