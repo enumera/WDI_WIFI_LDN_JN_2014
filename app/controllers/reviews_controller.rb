@@ -27,9 +27,10 @@ class ReviewsController < ApplicationController
   # GET /reviews/new.json
   def new
 
-    @review = Review.new(params[:my_wifi])
+    @review = Review.new
+    @wifi = Wifi.find(params[:wifi_id])
 
-    binding.pry
+   
 
 
     respond_to do |format|
@@ -46,7 +47,8 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(params[:review])
+    @wifi = Wifi.find(params[:wifi_id])
+    @review = @wifi.reviews.new(params[:review])
     @review.user_id = current_user.id
 
 

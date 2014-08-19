@@ -4,6 +4,9 @@ WifiJnLdn2014Psql::Application.routes.draw do
     get 'page/:page', action: :index, on: :collection
   end
 
+  resources :wifis do
+    resources :reviews
+  end
 
 
 
@@ -15,7 +18,7 @@ WifiJnLdn2014Psql::Application.routes.draw do
   resources :reviews
 
 
-  resources :wifis
+
 
 
   get "home/index"
