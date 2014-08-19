@@ -1,5 +1,7 @@
 <h1>Wifi Networks:</h1>
 
+ 
+
 <table>
   <tr>
     <th>Name</th>
@@ -37,5 +39,21 @@
 </table>
 
 <br />
+
 <%= paginate @wifis %>
+
+<%= search_form_for @q do |f| %>
+
+   <p>
+    <%= f.label :city_cont %>
+    <%= f.text_field :city_cont %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+
+<% end %>
+
+
 <%= link_to 'New Wifi', new_wifi_path %>

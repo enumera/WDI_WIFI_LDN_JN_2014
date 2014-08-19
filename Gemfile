@@ -15,7 +15,11 @@ gem 'rmagick', :require => 'RMagick'
 
 gem 'omniauth-google-oauth2'
 
+
 gem 'kaminari'
+
+gem 'ransack'
+
 
 group :development, :test do
   gem 'letter_opener'
