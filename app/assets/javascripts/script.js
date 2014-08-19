@@ -36,7 +36,12 @@ $(document).ready(function(){
 
   var longP
   var latP
+
   
+  //var locations = ["SW11 4EG", "NW1 0LE", "NW6 7AY", "SW6 2TQ"]
+  
+  var locations = $('#wifiarrays').data('postcode');
+
   mapApp = {
     positionMarker: null, 
     initializeMap: function(){
@@ -49,8 +54,6 @@ $(document).ready(function(){
       map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
       // searchBox.bindTo('bounds', map);
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-    var locations = ["SW11 4EG", "NW1 0LE", "NW6 7AY", "SW6 2TQ"]
 
     locations.forEach(function(postcode){
       var loc = postcode;

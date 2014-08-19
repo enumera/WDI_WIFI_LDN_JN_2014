@@ -53,3 +53,10 @@
         <div id="directions-panel"></div>
       </div>
     </div>
+
+
+    <% wifi_postcode_array = @wifis.map do |wifi| %>
+        <%  wifi.postcode %>
+    <% end %>
+    <div id="wifiarrays" data-postcode="<%=  wifi_postcode_array.to_json %>">
+    </div>
