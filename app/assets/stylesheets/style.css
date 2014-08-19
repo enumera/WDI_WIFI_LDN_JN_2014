@@ -194,7 +194,7 @@ tr {
 }
 
 .profile-div {
-  width: 66.5%;
+/*  width: 66.5%;*/
   text-align: center; 
   background: #1f8dd6;
   color: white;
@@ -202,11 +202,11 @@ tr {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  float: left;
+  /*float: left;*/
 }
 
 .add-more {
-  width: 33%;
+/*  width: 33%;*/
   text-align: center; 
   background: #1f8dd6;
   color: white;
@@ -214,7 +214,7 @@ tr {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 25px;
-  float: right;
+/*  float: right;*/
 }
 
 .accordian {
@@ -229,5 +229,15 @@ tr {
 
 .new-user-side {
   width: 66.5%;
+  float: right;
+}
+
+.semi-container-left {
+  width: 66.5%;
+  float: left;
+}
+
+.semi-container-right {
+  width: 33%;
   float: right;
 }
