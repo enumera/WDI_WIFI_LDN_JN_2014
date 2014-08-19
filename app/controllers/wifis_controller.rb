@@ -3,10 +3,11 @@ class WifisController < ApplicationController
   # GET /wifis.json
   def index
 
+    @q = Wifi.search(params[:q])
+    @wifis = @q.result(distinct: true)
      @wifis = Wifi.order(:created_at).page(params[:page])
 
-     @q = Wifi.search(params[:q])
-  @wifis = @q.result(distinct: true)
+   
     # @wifis = Wifi.all
 
     respond_to do |format|

@@ -51,14 +51,16 @@
       <%= link_to "HOME", root_path%>
     </div>
     <div class="FOOTER-DIV">
-    "MY PROFILE"
+      <% if current_user %>
+    <%= link_to "MY PROFILE", user_path(current_user) %>
+    <% else %>
+    <%= link_to "Sign in", login_path %>
+    <% end %>
     </div>
     <div class="FOOTER-DIV">
       <%= link_to "ADD A WIFI", new_wifi_path%></div>
   </div>
 
-  <script>
-    
-  </script>
+ 
 </body>
 </html>

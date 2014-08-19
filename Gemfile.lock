@@ -192,8 +192,8 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
-  kaminari
   jquery-ui-rails
+  kaminari
   letter_opener
   omniauth-google-oauth2
   pg
