@@ -41,8 +41,11 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @review = Wifi.find(params[:wifi_id]).reviews.find(params[:id])
+    @wifi = Wifi.find(params[:wifi_id])
 
-    @review = Review.find(params[:id])
+    # @review = Review.find(params[:id])
+
   end
 
   # POST /reviews
@@ -67,11 +70,14 @@ class ReviewsController < ApplicationController
   # PUT /reviews/1
   # PUT /reviews/1.json
   def update
-    @review = Review.find(params[:id])
+    @review = Wifi.find(params[:wifi_id]).reviews.find(params[:id])
+    @wifi = Wifi.find(params[:wifi_id])
+
+    # @review = Review.find(params[:id])
 
     respond_to do |format|
       if @review.update_attributes(params[:review])
-        format.html { redirect_to @review, notice: 'Review was successfully updated.' }
+        format.html { redirect_to wifi_review_path(@wifi, @review), notice: 'Review was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
