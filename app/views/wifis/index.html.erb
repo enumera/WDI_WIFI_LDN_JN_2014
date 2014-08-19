@@ -1,40 +1,37 @@
 <h1>Wifi Networks:</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Password</th>
-    <th>Free or paid</th>
-    <th>Share scope</th>
-    <th>Business name</th>
-    <th>Address line 1</th>
-    <th>Address line 2</th>
-    <th>City</th>
-    <th>Postcode</th>
-    <th>Country</th>
-    <th>Phone</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    Name
+    Password
+    Free or paid
+    Share scope
+    Business name
+    Address line 1
+    Address line 2
+    City
+    Postcode
+    Country
+    Phone
+  
+<dl class="accordion">
 
-<% @wifis.each do |wifi| %>
-  <tr>
-    <td><%= link_to(wifi.name, wifi) %></td>
-    <td><%= wifi.password %></td>
-    <td><%= wifi.free_or_paid %></td>
-    <td><%= wifi.share_scope %></td>
-    <td><%= wifi.business_name %></td>
-    <td><%= wifi.address_line_1 %></td>
-    <td><%= wifi.address_line_2 %></td>
-    <td><%= wifi.city %></td>
-    <td><%= wifi.postcode %></td>
-    <td><%= wifi.country %></td>
-    <td><%= wifi.phone %></td> 
-  </tr>
-<% end %>
-</table>
-
-<br />
+    <% @wifis.each do |wifi| %>
+    
+    <dt><a href="">Panel 1</a></dt>
+    <dd>
+        <%= link_to(wifi.name, wifi) %>
+        <%= wifi.password %>
+        <%= wifi.free_or_paid %>
+        <%= wifi.share_scope %>
+        <%= wifi.business_name %>
+        <%= wifi.address_line_1 %>
+        <%= wifi.address_line_2 %>
+        <%= wifi.city %>
+        <%= wifi.postcode %>
+        <%= wifi.country %>
+        <%= wifi.phone %>
+     
+        <% end %>
+    </dd>
+</dl>
 
 <%= link_to 'New Wifi', new_wifi_path %>
