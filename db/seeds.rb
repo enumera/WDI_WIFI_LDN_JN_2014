@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+UserType.all.each {|x| x.destroy}
+Group.all.each {|x| x.destroy}
+VenueType.all.each {|x| x.destroy}
+User.all.each {|x| x.destroy}
+Wifi.all.each {|x| x.destroy}
+Review.all.each {|x| x.destroy}
 
 UserType.create(name: "Student")
 UserType.create(name: "Business")
@@ -17,35 +23,35 @@ UserType.create(name: "example 3")
 UserType.create(name: "example 4")
 
 
-g1 = Group.create(name: "Public")
-g2 = Group.create(name: "Business")
-g3 = Group.create(name: "Student")
-g4 = Group.create(name: "example group")
-Group.create(name: "example_group2")
-Group.create(name: "example group3")
-Group.create(name: "example group 4")
-Group.create(name: "example_group 5")
-Group.create(name: "example group6")
+g1 = Group.create(name: "Public", group_type: "public")
+g2 = Group.create(name: "Business", group_type: "public")
+g3 = Group.create(name: "Student", group_type: "public")
+g4 = Group.create(name: "example group", group_type: "private")
+Group.create(name: "example_group2", group_type: "private")
+Group.create(name: "example group3", group_type: "private")
+Group.create(name: "example group 4", group_type: "private")
+Group.create(name: "example_group 5", group_type: "private")
+Group.create(name: "example group6", group_type: "private")
 
-Group.create(name: "example_group7")
-Group.create(name: "example group8")
-Group.create(name: "example group 9")
-Group.create(name: "example_group 10")
-Group.create(name: "example group 11")
+Group.create(name: "example_group7", group_type: "private")
+Group.create(name: "example group8", group_type: "private")
+Group.create(name: "example group 9", group_type: "private")
+Group.create(name: "example_group 10", group_type: "private")
+Group.create(name: "example group 11", group_type: "private")
 
 
-Group.create(name: "example group 12")
-Group.create(name: "example_group 13")
-Group.create(name: "example group14")
-Group.create(name: "example group 15")
-Group.create(name: "example_group 16")
-Group.create(name: "example group 17")
+Group.create(name: "example group 12", group_type: "private")
+Group.create(name: "example_group 13", group_type: "private")
+Group.create(name: "example group14", group_type: "private")
+Group.create(name: "example group 15", group_type: "private")
+Group.create(name: "example_group 16", group_type: "private")
+Group.create(name: "example group 17", group_type: "private")
 
-Group.create(name: "example_group 18")
-Group.create(name: "example group 19")
-Group.create(name: "example group 20")
-Group.create(name: "example_group 21")
-Group.create(name: "example group 22")
+Group.create(name: "example_group 18", group_type: "private")
+Group.create(name: "example group 19", group_type: "private")
+Group.create(name: "example group 20", group_type: "private")
+Group.create(name: "example_group 21", group_type: "private")
+Group.create(name: "example group 22", group_type: "private")
 
 VenueType.create(name: "Hotel")
 VenueType.create(name: "Home")
