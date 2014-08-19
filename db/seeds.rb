@@ -117,6 +117,43 @@ g2.users << [u1, u14, u11]
 g3.users << [u2, u3, u4, u11, u13]
 g4.users << [u5, u6 ,u7, u2]
 
+r1 = Review.create(comment: "This place is great1")
+r2 = Review.create(comment: "This place is great2")
+r3 = Review.create(comment: "This place is greeeeeaaaaaaaaaaaAAAat")
+r4 = Review.create(comment: "This place is bad")
+r5 = Review.create(comment: "This place is wonderful. I so pleased I found it")
+r6 = Review.create(comment: "This place is supercool.this is a long commment, commentcomementfjklajfljasljfljlfjljlajflajljklj
+  lasjlkfjsajkllksfjlkjlfkajlkfjlksafjlksl")
+r7 = Review.create(comment: "This place is great7")
+r8 = Review.create(comment: "This place is great8")
+r9 = Review.create(comment: "This place is great9")
+r10 = Review.create(comment: "This place is great10")
+r11 = Review.create(comment: "This place is great11")
+r12 = Review.create(comment: "This place is great12")
+r13 = Review.create(comment: "This place is great13")
+r14 = Review.create(comment: "This place is great14")
+r15 = Review.create(comment: "This place is great15")
+r16 = Review.create(comment: "This place is great16")
+
+r1.user = u1
+r2.user = u1
+r3.user = u2
+r4.user = u3
+r5.user = u14
+r6.user = u9
+r7.user = u10
+r8.user = u11
+r9.user = u12
+r10.user = u1
+r11.user = u5
+r12.user = u7
+r13.user = u8
+r14.user = u9
+r15.user = u10
+r16.user = u11
+
+
+
 
 
 
