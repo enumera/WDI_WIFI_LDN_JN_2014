@@ -5,6 +5,10 @@ WifiJnLdn2014Psql::Application.routes.draw do
   end
 
 
+
+
+
+
   resources :groups
 
 

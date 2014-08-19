@@ -17,10 +17,10 @@ UserType.create(name: "example 3")
 UserType.create(name: "example 4")
 
 
-Group.create(name: "Student")
-Group.create(name: "Business")
-Group.create(name: "Other")
-Group.create(name: "example group")
+g1 = Group.create(name: "Public")
+g2 = Group.create(name: "Business")
+g3 = Group.create(name: "Student")
+g4 = Group.create(name: "example group")
 Group.create(name: "example_group2")
 Group.create(name: "example group3")
 Group.create(name: "example group 4")
@@ -59,22 +59,39 @@ VenueType.create(name: "example 2")
 VenueType.create(name: "example 3")
 VenueType.create(name: "example 2")
 
-User.create(email: "user1@email.com", password: "password", password_confirmation: "password", first: "Andrew", last: "Fyfe")
-User.create(email: "user2@email.com", password: "password", password_confirmation: "password", first: "Gwen", last: "Au")
-User.create(email: "user3@email.com", password: "password", password_confirmation: "password", first: "Tom", last: "Walker")
-User.create(email: "user4@email.com", password: "password", password_confirmation: "password", first: "BIIIIGGGGgggg", last: "Nammmmekkkemee")
-User.create(email: "user5@email.com", password: "password", password_confirmation: "password", first: "sma", last: "aa")
-User.create(email: "user6@email.com", password: "password", password_confirmation: "password")
-User.create(email: "user7@email.com", password: "password", password_confirmation: "password")
+u1 = User.create(email: "user1@email.com", password: "password", password_confirmation: "password", first: "Andrew", last: "Fyfe")
+u2 = User.create(email: "user2@email.com", password: "password", password_confirmation: "password", first: "Gwen", last: "Au")
+u3 = User.create(email: "user3@email.com", password: "password", password_confirmation: "password", first: "Tom", last: "Walker")
+u4 = User.create(email: "user4@email.com", password: "password", password_confirmation: "password", first: "BIIIIGGGGgggg", last: "Nammmmekkkemee")
+u5 = User.create(email: "user5@email.com", password: "password", password_confirmation: "password", first: "sma", last: "aa")
+u6 = User.create(email: "user6@email.com", password: "password", password_confirmation: "password")
+u7 = User.create(email: "user7@email.com", password: "password", password_confirmation: "password")
 
-User.create(email: "user8@email.com", password: "password", password_confirmation: "password")
-User.create(email: "user9@email.com", password: "password", password_confirmation: "password")
-User.create(email: "user10@email.com", password: "password", password_confirmation: "password")
-User.create(email: "user11@email.com", password: "password", password_confirmation: "password")
-User.create(email: "user12@email.com", password: "password", password_confirmation: "password")
-User.create(email: "user13@email.com", password: "password", password_confirmation: "password")
-User.create(email: "user14@email.com", password: "password", password_confirmation: "password")
+u8 = User.create(email: "user8@email.com", password: "password", password_confirmation: "password")
+u9 = User.create(email: "user9@email.com", password: "password", password_confirmation: "password")
+u10 =User.create(email: "user10@email.com", password: "password", password_confirmation: "password")
+u11 = User.create(email: "user11@email.com", password: "password", password_confirmation: "password")
+u12 = User.create(email: "user12@email.com", password: "password", password_confirmation: "password")
+u13 = User.create(email: "user13@email.com", password: "password", password_confirmation: "password")
+u14 = User.create(email: "user14@email.com", password: "password", password_confirmation: "password")
 
+
+Wifi.create(name: "Wifi name A1", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+Wifi.create(name: "Wifi name B1", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+
+Wifi.create(name: "Wifi name C1", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+Wifi.create(name: "Wifi name D1", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+
+Wifi.create(name: "Wifi name E1", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+Wifi.create(name: "Wifi name A2", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+Wifi.create(name: "Wifi name B2", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+
+Wifi.create(name: "Wifi name C2", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+Wifi.create(name: "Wifi name D2", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+
+Wifi.create(name: "Wifi name E2", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
 
 Wifi.create(name: "Wifi name A1", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
 Wifi.create(name: "Wifi name B1", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
@@ -93,22 +110,13 @@ Wifi.create(name: "Wifi name D2", password: "wimanlfuanfjflklkfkljfkf////", free
 Wifi.create(name: "Wifi name E2", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
 Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
 
-Wifi.create(name: "Wifi name A1", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-Wifi.create(name: "Wifi name B1", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
 
-Wifi.create(name: "Wifi name C1", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-Wifi.create(name: "Wifi name D1", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
 
-Wifi.create(name: "Wifi name E1", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-Wifi.create(name: "Wifi name A2", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-Wifi.create(name: "Wifi name B2", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+g1.users << [u1, u2, u3, u4, u5, u6, u7, u8, u9, u10, u11, u12, u13, u14]
+g2.users << [u1, u14, u11]
+g3.users << [u2, u3, u4, u11, u13]
+g4.users << [u5, u6 ,u7, u2]
 
-Wifi.create(name: "Wifi name C2", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-Wifi.create(name: "Wifi name D2", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-
-Wifi.create(name: "Wifi name E2", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
 
 
 
