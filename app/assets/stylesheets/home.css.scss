@@ -1,1 +1,21 @@
 
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#googleMap{
+  width:100%; 
+  min-height:500px; 
+  position: relative;
+  z-index: -10;
+}
+
+#pac-input {
+  padding: 10px;
+  margin: 10px;
+}
+
+/*.btn btn-default {
+  margin: 20px;
+}*/
+

@@ -15,7 +15,24 @@ gem 'rmagick', :require => 'RMagick'
 
 gem 'omniauth-google-oauth2'
 
+
 gem 'rails_12factor', group: :production
+
+
+gem 'kaminari'
+
+gem 'ransack'
+
+
+group :development, :test do
+  gem 'letter_opener'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,7 +47,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'jquery-ui-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

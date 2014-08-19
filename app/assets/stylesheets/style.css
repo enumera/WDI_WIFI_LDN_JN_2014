@@ -1,4 +1,4 @@
-* {
+*{
   box-sizing: border-box;
 }
 
@@ -110,6 +110,7 @@ p {
   padding: 0;
 }
 
+
 main h1 {
   display: inline-block;
   font-weight: 300;
@@ -123,7 +124,6 @@ label, input {
 h3 {
   font-weight: 300;
 }
-
 
 tr { 
   font-weight: 400;
@@ -178,8 +178,13 @@ tr {
   float: left;
 }
 
+
 .profile-image {
   float: right;
+}
+
+.profile-summary {
+  float: left;
 }
 
 .profile-container {
@@ -217,4 +222,12 @@ tr {
   clear: left;
 }
 
+.user-form {
+  width:600px;
+  float: left;
+}
 
+.new-user-side {
+  width: 66.5%;
+  float: right;
+}

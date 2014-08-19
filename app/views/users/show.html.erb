@@ -1,75 +1,104 @@
 <section>
   <div class="profile-header">
-    MY PROFILE PAGE:
+    <h1>MY PROFILE PAGE:</h1>
     <br>
-    <br>
-    <br>
-    <%= @user.first.upcase %>
-    <%= @user.last.upcase %>
+    <h1><%= @user.first %></h1>
+    <h1><%= @user.last %></h1>
   </div>
   <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
-</section>
-<section class="profile-container">
-  <div class="profile-div">MY NETWORK:</div>
-  <div class="add-more">ADD NETWORK</div>
-  <div class="accordian">
-    <%#  @wifis.each do |wifi| %>
-    <h4>wifi.name</h4>
-      <table>
+  <div class="profile-summary">
+    <table>
         <tr>
-          <td>Password:</td>
-          <td>password</td>
+          <td>Sex:</td>
+          <td><%= @user.sex %></td>
         </tr>
         <tr>
-          <td>Free or Paid:</td>
-          <td>Free</td>
+          <td>DOB:</td>
+          <td><%= @user.dob %></td>
         </tr>
         <tr>
-          <td>Private or public Network</td>
-          <td>Public</td>
+          <td>Occupation:</td>
+          <td><%= @user.occupation %></td>
         </tr>
         <tr>
-          <td>Business name:</td>
-          <td>British Library</td>
+          <td>Position:</td>
+          <td><%= @user.position %></td>
         </tr>
         </tr>
-          <td></td>
-          <td>phone result</td>
+          <td>Role</td>
+          <td><%= @user.role %></td>
         <tr>
         <tr>
-          <td></td>
-          <td>Adress line 1 result</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Addressline 2 result</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>city and postcode result</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>country result</td>
+          <td>Phone number:</td>
+          <td><%= @user.phone %></td>
         </tr>
       </table>
-    <%# end %>
   </div>
-
+</section>
+<section class="profile-container">
+  <div class="profile-div">MY NETWORKS:</div>
+  <div class="add-more">ADD NETWORK</div>
+  <div id="accordion-wifi">
+    <%  @wifis.each do |wifi| %>
+      <h3><%= wifi.name %></h3>
+      <div>
+        <table>
+          <tr>
+            <td>Password:</td>
+            <td><%= wifi.password %></td>
+          </tr>
+          <tr>
+            <td>Free or Paid:</td>
+            <td><%= wifi.free_or_paid %></td>
+          </tr>
+          <tr>
+            <td>Private or public Network</td>
+            <td><%= wifi.share_scope %></td>
+          </tr>
+          <tr>
+            <td>Business name:</td>
+            <td><%= wifi.business_name %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= wifi.phone %></td>
+          </tr>    
+          <tr>
+            <td></td>
+            <td><%= wifi.address_line_1 %></td>
+          </tr> 
+          <tr>
+            <td></td>
+            <td><%= wifi.address_line_2 %></td>
+          </tr> 
+          <tr>
+            <td></td>
+            <td><%= wifi.city %></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><%= wifi.country %></td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  </div>
 </section>
 
 <section class="profile-container">
   <div class="profile-div">MY GROUPS:</div>
   <div class="add-more">ADD GROUP</div>
-  <div class="accordian">
-    <h4>group.name</h4>
-      <table>
-        <tr>
-          <td>photo</td>
-          <td>name</td>
-        </tr>
-      </table>
+  <div id="accordion-group">
+    <%= @groups.each do |group| %>
+      <h3>group.name</h3>
+      <div>
+        <table>
+          <tr>
+            <td>photo</td>
+            <td>name</td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
   </div>
-
-
 </section>

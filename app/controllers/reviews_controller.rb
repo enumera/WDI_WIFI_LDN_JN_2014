@@ -2,7 +2,9 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.all
+
+     @reviews = Review.order(:created_at).page(params[:page])
+    # @reviews = Review.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +26,11 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   # GET /reviews/new.json
   def new
-    @review = Review.new
+
+    @review = Review.new(params[:my_wifi])
+
+    binding.pry
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +47,8 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(params[:review])
+    @review.user_id = current_user.id
+
 
     respond_to do |format|
       if @review.save
