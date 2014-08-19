@@ -89,8 +89,9 @@
   <div class="profile-div">MY GROUPS:</div>
   <div class="add-more">ADD GROUP</div>
   <div id="accordion-group">
-    <%= @groups.each do |group| %>
-      <h3>group.name</h3>
+    <% @groups.each do |group| %>
+      <%=group.name%>
+      
       <div>
         <table>
           <tr>
@@ -99,6 +100,6 @@
           </tr>
         </table>
       </div>
-    <% end %>
+   <%end%>
   </div>
 </section>

@@ -17,7 +17,7 @@ class UsersController <ApplicationController
   def show
     @user = User.find(params[:id])
     @wifis = Wifi.all
-    @groups = Group.all
+    @groups = @user.groups
 
   respond_to do |format|
       format.html # show.html.erb
