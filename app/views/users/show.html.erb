@@ -36,70 +36,79 @@
   </div>
 </section>
 <section class="profile-container">
-  <div class="profile-div">MY NETWORKS:</div>
-  <div class="add-more">ADD NETWORK</div>
-  <div id="accordion-wifi">
-    <%  @wifis.each do |wifi| %>
-      <h3><%= wifi.name %></h3>
-      <div>
-        <table>
-          <tr>
-            <td>Password:</td>
-            <td><%= wifi.password %></td>
-          </tr>
-          <tr>
-            <td>Free or Paid:</td>
-            <td><%= wifi.free_or_paid %></td>
-          </tr>
-          <tr>
-            <td>Private or public Network</td>
-            <td><%= wifi.share_scope %></td>
-          </tr>
-          <tr>
-            <td>Business name:</td>
-            <td><%= wifi.business_name %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><%= wifi.phone %></td>
-          </tr>    
-          <tr>
-            <td></td>
-            <td><%= wifi.address_line_1 %></td>
-          </tr> 
-          <tr>
-            <td></td>
-            <td><%= wifi.address_line_2 %></td>
-          </tr> 
-          <tr>
-            <td></td>
-            <td><%= wifi.city %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><%= wifi.country %></td>
-          </tr>
-        </table>
-      </div>
-    <% end %>
+ <div class="semi-container-left">
+    <div class="profile-div">MY NETWORKS:</div>
+    <div id="accordion-wifi">
+      <%  @wifis.each do |wifi| %>
+        <h3><%= wifi.name %></h3>
+        <div>
+          <table>
+            <tr>
+              <td>Password:</td>
+              <td><%= wifi.password %></td>
+            </tr>
+            <tr>
+              <td>Free or Paid:</td>
+              <td><%= wifi.free_or_paid %></td>
+            </tr>
+            <tr>
+              <td>Private or public Network</td>
+              <td><%= wifi.share_scope %></td>
+            </tr>
+            <tr>
+              <td>Business name:</td>
+              <td><%= wifi.business_name %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= wifi.phone %></td>
+            </tr>    
+            <tr>
+              <td></td>
+              <td><%= wifi.address_line_1 %></td>
+            </tr> 
+            <tr>
+              <td></td>
+              <td><%= wifi.address_line_2 %></td>
+            </tr> 
+            <tr>
+              <td></td>
+              <td><%= wifi.city %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= wifi.country %></td>
+            </tr>
+          </table>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="semi-container-right">
+    <div class="add-more">ADD NETWORK</div>
+    <!-- Andy content here -->
   </div>
 </section>
 
 <section class="profile-container">
-  <div class="profile-div">MY GROUPS:</div>
-  <div class="add-more">ADD GROUP</div>
-  <div id="accordion-group">
-    <% @groups.each do |group| %>
-      <%=group.name%>
-      
-      <div>
-        <table>
-          <tr>
-            <td>photo</td>
-            <td>name</td>
-          </tr>
-        </table>
-      </div>
-   <%end%>
+  <div class="semi-container-left">
+    <div class="profile-div">MY GROUPS:</div>
+    <div id="accordion-group">
+      <% @groups.each do |group| %>
+        <%=group.name%>
+        <div>
+          <table>
+            <tr>
+              <td>photo</td>
+              <td>name</td>
+            </tr>
+          </table>
+        </div>
+     <%end%>
+    </div>
+  </div>
+  <div class="semi-container-right">
+    <div class="add-more">ADD GROUP</div>
+    <!-- Andy content here -->
   </div>
 </section>
