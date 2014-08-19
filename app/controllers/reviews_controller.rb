@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   def index
 
      @reviews = Wifi.find(params[:wifi_id]).reviews.order(:created_at).page(params[:page])
+     @wifi = Wifi.find(params[:wifi_id])
     # @reviews = Review.all
 
     respond_to do |format|
@@ -15,7 +16,10 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
-    @review = Review.find(params[:id])
+    @review = Wifi.find(params[:wifi_id]).reviews.find(params[:id])
+    @wifi = Wifi.find(params[:wifi_id])
+    # @review = @wifi.reviews.new(params[:review])
+    # @review =Review.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,10 +33,6 @@ class ReviewsController < ApplicationController
 
     @review = Review.new
     @wifi = Wifi.find(params[:wifi_id])
-
-   
-
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @review }
@@ -55,7 +55,7 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
+        format.html { redirect_to wifi_review_path(@wifi, @review), notice: 'Review was successfully created.' }
         format.json { render json: @review, status: :created, location: @review }
       else
         format.html { render action: "new" }

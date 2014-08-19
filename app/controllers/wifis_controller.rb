@@ -20,6 +20,7 @@ class WifisController < ApplicationController
   # GET /wifis/1.json
   def show
     @wifi = Wifi.find(params[:id])
+    @reviews = @wifi.reviews
 
     respond_to do |format|
       format.html # show.html.erb
