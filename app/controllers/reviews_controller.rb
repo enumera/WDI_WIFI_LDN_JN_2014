@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
 
-     @reviews = Review.order(:created_at).page(params[:page])
+     @reviews = Wifi.find(params[:wifi_id]).reviews.order(:created_at).page(params[:page])
     # @reviews = Review.all
 
     respond_to do |format|
@@ -41,6 +41,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+
     @review = Review.find(params[:id])
   end
 
