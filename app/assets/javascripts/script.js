@@ -50,23 +50,27 @@ $(document).ready(function(){
       // searchBox.bindTo('bounds', map);
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-      var loc = "TN11 8DY";
+    var locations = ["SW11 4EG", "NW1 0LE", "NW6 7AY", "SW6 2TQ"]
+
+    locations.forEach(function(postcode){
+      var loc = postcode;
       var geocoder = new google.maps.Geocoder();
+
       geocoder.geocode( {'address': loc },
             function(data, status) { 
               longP = data[0].geometry.location.B
               latP = data[0].geometry.location.k
     
-              var wifiLatlng = new google.maps.LatLng(latP,longP)
+              var found = new google.maps.LatLng(latP, longP)
               var wifimarker = new google.maps.Marker({
-                  position: wifiLatlng,
-                  map: map,
-                  title: 'Hello World!'
-                });
+              position: found,
+              map: map,
+              title: 'Hello World!'
+           });
+        });
       });
   },
 
-  
   // var wifiLatlng1 = new google.maps.LatLng(51.475434,-0.155789);
   // var wifiLatlng2 = new google.maps.LatLng(51.565449,-0.01215)
   // var wifiLatlng3 = new google.maps.LatLng(51.536479,-0.136149)
