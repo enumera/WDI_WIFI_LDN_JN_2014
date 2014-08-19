@@ -1,22 +1,25 @@
 
 // createMap
 
-
-
 $(document).ready(function(){
 
-   console.log("hai");
+  // Gwen's accordion code
   $( "#accordion-wifi" ).accordion();
   $( "#accordion-group" ).accordion();
-  console.log('Page reload!')
-  
+ 
+  // Tom's accordion below
+
+  var allPanels = $('.accordion > dd').hide();
+
+  $('.accordion > dt > a').click(function() {
+  allPanels.slideUp();
+  $(this).parent().next().slideDown();
+  return false;
+  });
+
   // createConsole()
   // createMap() 
  
-
-
-
-
   var mapOptions, canvas, map;
 
   //Autocomplete /search variables
