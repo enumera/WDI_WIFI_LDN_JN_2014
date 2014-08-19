@@ -37,7 +37,7 @@
 </section>
 <section class="profile-container">
   <div class="profile-div">MY NETWORKS:</div>
-  <div class="add-more">ADD NETWORK</div>
+  <div class="add-more">CREATE A NETWORK</div>
   <div id="accordion-wifi">
     <%  @wifis.each do |wifi| %>
       <h3><%= wifi.name %></h3>
@@ -87,7 +87,7 @@
 
 <section class="profile-container">
   <div class="profile-div">MY GROUPS:</div>
-  <div class="add-more">ADD GROUP</div>
+  <div class="add-more">CREATE A GROUP</div>
   <div id="accordion-group">
     <% @groups.each do |group| %>
       <%=group.name%>
@@ -101,5 +101,8 @@
         </table>
       </div>
    <%end%>
+
   </div>
+ 
+
 </section>
