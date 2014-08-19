@@ -29,7 +29,7 @@
         <%= wifi.postcode %>
         <%= wifi.country %>
         <%= wifi.phone %>
-     
+        <%= link_to 'Show Reviews', wifi_reviews_path(wifi.id) %>
         <% end %>
     </dd>
 </dl>

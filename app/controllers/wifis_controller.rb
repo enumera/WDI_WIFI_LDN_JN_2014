@@ -22,10 +22,6 @@ class WifisController < ApplicationController
     @wifi = Wifi.find(params[:id])
     @reviews = @wifi.reviews
 
- 
-
-
- 
 
     respond_to do |format|
       format.html # show.html.erb

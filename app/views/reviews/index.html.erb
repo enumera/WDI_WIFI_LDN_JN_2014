@@ -35,8 +35,8 @@
     <td><%= review.power_point_availability %></td>
     <td><%= review.rough_number_of_seats %></td>
     <td><%= review.reservation_possible %></td>
-    <td><%= link_to 'Show', review %></td>
-    <td><%= link_to 'Edit', edit_review_path(review) %></td>
+    <td><%= link_to 'Show', wifi_review_path(@wifi.id, review) %></td>
+    <td><%= link_to 'Edit', edit_wifi_review_path(@wifi.id, review) %></td>
     <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
@@ -44,4 +44,5 @@
 
 <br />
 <%= paginate @reviews %>
-<%= link_to 'New Review', new_review_path %>
+<%= link_to 'Create a new review', new_wifi_review_path(@wifi) %>
+
