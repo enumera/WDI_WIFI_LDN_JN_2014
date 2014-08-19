@@ -30,6 +30,18 @@ $(document).ready(function(){
   var input = $('#pac-input')[0];
   var searchBox = new google.maps.places.SearchBox(input);
 
+  // Trying to get wifi marker to appear
+  
+  var wifiLatlng1 = new google.maps.LatLng(51.475434,-0.155789);
+  var wifiLatlng2 = new google.maps.LatLng(51.565449,-0.01215)
+  var wifiLatlng3 = new google.maps.LatLng(51.536479,-0.136149)
+  var locations = []
+
+  locations.push(wifiLatlng1, wifiLatlng2, wifiLatlng3)
+
+  //array = [[51.475434,-0.155789],[51.565449,-0.01215],[51.536479,-0.136149]]
+  //
+
   mapApp = {
     positionMarker: null, 
     initializeMap: function(){
@@ -42,10 +54,18 @@ $(document).ready(function(){
       map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
       // searchBox.bindTo('bounds', map);
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+      locations.forEach(function(markerpoint){
+        var wifimarker = new google.maps.Marker({
+        position: markerpoint,
+        map: map,
+        title: 'Hello World!'
+        });
+      });
     },
+
     autocomplete: function(){
       var place = searchBox.getPlaces()[0];
-      debugger;
       if (place.geometry.viewport){
         map.fitBounds(place.geometry.viewport);
       }else{
@@ -137,8 +157,6 @@ $(document).ready(function(){
       alert('Geolocation not available in this browser');
     }
   })
-
-  //Code to add keystroke enter function
 
   mapApp.initializeMap();
 
