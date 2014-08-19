@@ -46,6 +46,7 @@ class UsersController <ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+     UserMailer.registration_confirmation(@user).deliver
 
     respond_to do |format|
       if @user.save
@@ -56,6 +57,7 @@ class UsersController <ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+     UserMailer.registration_confirmation(@user).deliver
   end
 
 
