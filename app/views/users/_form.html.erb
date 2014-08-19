@@ -48,11 +48,24 @@
     <%= f.label :phone %>
     <%= f.text_field :phone %>
   </div>
+
+  <% Group.all.each do |group| %>
+    <%=group.name %>
+    <%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
+<% end %>
+
+
   <div class="action">
     <%= f.submit %>
     <% end %>
   </div>
 </div>
+
+
+ 
+
+
+
 
 <div id="user-form-right">
 <div class="profile-div user-side">ADD NETWORK</div>
