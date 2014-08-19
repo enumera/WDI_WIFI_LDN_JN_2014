@@ -121,4 +121,5 @@ $(document).ready(function(){
   //Code to add keystroke enter function
 
   mapApp.initializeMap();
+
 })
