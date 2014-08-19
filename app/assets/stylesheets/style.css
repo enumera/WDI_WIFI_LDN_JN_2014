@@ -241,3 +241,7 @@ tr {
   width: 33%;
   float: right;
 }
+
+#footer-wrapper-div {
+  clear: both;
+}
