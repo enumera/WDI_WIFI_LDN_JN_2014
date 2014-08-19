@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   belongs_to :user_type
   has_and_belongs_to_many :groups
   has_many :reviews
+  has_and_belongs_to_many :wifis
 
   mount_uploader :image, ProfileImageUploader
 

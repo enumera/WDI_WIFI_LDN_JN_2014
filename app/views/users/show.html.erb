@@ -1,9 +1,9 @@
 <section>
   <div class="profile-header">
-    <h1>MY PROFILE PAGE:</h1>
+    <p>MY PROFILE PAGE:</p>
     <br>
-    <h1><%= @user.first %></h1>
-    <h1><%= @user.last %></h1>
+    <p><%= @user.first %> <%= @user.last%></p>
+  
   </div>
   <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
   <div class="profile-summary">
@@ -93,9 +93,12 @@
 <section class="profile-container">
   <div class="semi-container-left">
     <div class="profile-div">MY GROUPS:</div>
-    <div id="accordion-group">
+   <!--  <div id="accordion-group"> -->
       <% @groups.each do |group| %>
-        <%=group.name%>
+        <%= link_to(group.name, group)%>
+        <%=group.group_type%>
+
+        <br>
         <div>
           <table>
             <tr>
@@ -105,10 +108,19 @@
           </table>
         </div>
      <%end%>
-    </div>
+   <!--  </div> -->
   </div>
   <div class="semi-container-right">
     <div class="add-more">ADD GROUP</div>
+   <!-- 
+      <%=form_for(@group, url: {action: "create"} do |f| %>
+        <%= f.label :name, "New group name" %>
+        <%= f.text_field :name %>
+        <%= f.label :group_type %>
+        <%= f.select :group_type, options_for_select([:private, :public]) %><br>
+        <%= submit_tag "Create" %>
+      <% end %> -->
+
     <!-- Andy content here -->
   </div>
  

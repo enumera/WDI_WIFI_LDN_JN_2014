@@ -3,8 +3,11 @@
 <div class="group-index-table">
   <% @groups.each do |group| %>
     <table>
-      <tr><div class="group-div"><%= group.name %></div></tr>
-        <tr><div class="group-div"><%= group.group_type %></div></tr>
+      <td><div class="group-div"><%= group.name %></div></td>
+        <td><div class="group-div"><%= group.group_type %></div></td>
+        <table>
+     
+      
 
       <!-- consider taking this part out
       <td><%#= link_to 'Show', group %></td>
