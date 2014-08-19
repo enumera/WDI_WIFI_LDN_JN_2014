@@ -31,17 +31,12 @@ $(document).ready(function(){
   var searchBox = new google.maps.places.SearchBox(input);
 
   // Trying to get wifi marker to appear
+
+  //var wifiLatlng = new google.maps.LatLng(51.475434,-0.155789);
+
+  var longP
+  var latP
   
-  var wifiLatlng1 = new google.maps.LatLng(51.475434,-0.155789);
-  var wifiLatlng2 = new google.maps.LatLng(51.565449,-0.01215)
-  var wifiLatlng3 = new google.maps.LatLng(51.536479,-0.136149)
-  var locations = []
-
-  locations.push(wifiLatlng1, wifiLatlng2, wifiLatlng3)
-
-  //array = [[51.475434,-0.155789],[51.565449,-0.01215],[51.536479,-0.136149]]
-  //
-
   mapApp = {
     positionMarker: null, 
     initializeMap: function(){
@@ -55,14 +50,54 @@ $(document).ready(function(){
       // searchBox.bindTo('bounds', map);
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-      locations.forEach(function(markerpoint){
-        var wifimarker = new google.maps.Marker({
-        position: markerpoint,
-        map: map,
-        title: 'Hello World!'
-        });
+      var loc = "TN11 8DY";
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode( {'address': loc },
+            function(data, status) { 
+              longP = data[0].geometry.location.B
+              latP = data[0].geometry.location.k
+    
+              var wifiLatlng = new google.maps.LatLng(latP,longP)
+              var wifimarker = new google.maps.Marker({
+                  position: wifiLatlng,
+                  map: map,
+                  title: 'Hello World!'
+                });
       });
-    },
+  },
+
+  
+  // var wifiLatlng1 = new google.maps.LatLng(51.475434,-0.155789);
+  // var wifiLatlng2 = new google.maps.LatLng(51.565449,-0.01215)
+  // var wifiLatlng3 = new google.maps.LatLng(51.536479,-0.136149)
+  // var locations = []
+
+  // locations.push(wifiLatlng1, wifiLatlng2, wifiLatlng3)
+
+  // //array = [[51.475434,-0.155789],[51.565449,-0.01215],[51.536479,-0.136149]]
+  // //
+
+  // mapApp = {
+  //   positionMarker: null, 
+  //   initializeMap: function(){
+  //     mapOptions = {
+  //       zoom:8,
+  //       center:new google.maps.LatLng(51.508742, -0.120850),
+  //       mapTypeId:google.maps.MapTypeId.ROADMAP
+  //     };
+  //     canvas = $('#googleMap')[0];
+  //     map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
+  //     // searchBox.bindTo('bounds', map);
+  //     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  //     locations.forEach(function(markerpoint){
+  //       var wifimarker = new google.maps.Marker({
+  //       position: markerpoint,
+  //       map: map,
+  //       title: 'Hello World!'
+  //       });
+  //     });
+  //   },
 
     autocomplete: function(){
       var place = searchBox.getPlaces()[0];
