@@ -77,6 +77,8 @@ $(document).ready(function(){
       var geocoder = new google.maps.Geocoder();
       $.each(window.markers_info, function(i, network){
         console.log(network)
+        var content = network.reviews
+        var contentString = content.toString();
         geocoder.geocode( {'address': network.postcode }, function(data, status) { 
           longP = data[0].geometry.location.B
           latP = data[0].geometry.location.k
@@ -84,7 +86,7 @@ $(document).ready(function(){
           var wifimarker = new google.maps.Marker({
             position: found,
             map: map,
-            title: network.business_name
+            title: contentString
           });
         });
       })
