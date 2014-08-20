@@ -43,7 +43,25 @@ $(document).ready(function(){
   var locations = $('#wifiarrays').data('postcode');
 
   var hoverWifiAll = $('#hoverId').data('wifiinfo')
-  var hoverWifiSpecifi = hoverWifiAll
+
+  console.log(hoverWifiAll)
+
+//   var len = hoverWifiAll.length
+//   for (var i=0; i<len; ++i) {
+//   if (i in hoverWifiAll) {
+//     var s = hoverWifiAll[i];
+//     console.log(s)
+//   }
+// } 
+
+  // var hoverWifiSpecific = hoverWifiAll.forEach(function(postcode2){
+  //   console.log(postcode2)
+  // })
+
+  //console.log(hoverWifiSpecific)
+  //alert(hoverWifiAll['hash_postcode'][0]['postcode']); 
+  //alert(hoverWifiAll.hash_postcde[0]['postcode']);    //style 2
+  //alert(hoverWifiAll.hash_postcde[0].postcode);    //style 3
 
   mapApp = {
     positionMarker: null, 
@@ -55,27 +73,22 @@ $(document).ready(function(){
       };
       canvas = $('#googleMap')[0];
       map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
-      // searchBox.bindTo('bounds', map);
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-    locations.forEach(function(postcode){
-      var loc = postcode;
       var geocoder = new google.maps.Geocoder();
-
-      geocoder.geocode( {'address': loc },
-            function(data, status) { 
-              longP = data[0].geometry.location.B
-              latP = data[0].geometry.location.k
-    
-              var found = new google.maps.LatLng(latP, longP)
-              var wifimarker = new google.maps.Marker({
-              position: found,
-              map: map,
-              title: hoverWifiSpecifi
-           });
+      $.each(window.markers_info, function(i, network){
+        console.log(network)
+        geocoder.geocode( {'address': network.postcode }, function(data, status) { 
+          longP = data[0].geometry.location.B
+          latP = data[0].geometry.location.k
+          var found = new google.maps.LatLng(latP, longP)
+          var wifimarker = new google.maps.Marker({
+            position: found,
+            map: map,
+            title: network.business_name
+          });
         });
-      });
-  },
+      })
+    },
 
   // var wifiLatlng1 = new google.maps.LatLng(51.475434,-0.155789);
   // var wifiLatlng2 = new google.maps.LatLng(51.565449,-0.01215)
