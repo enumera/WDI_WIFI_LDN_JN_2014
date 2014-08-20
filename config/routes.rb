@@ -8,18 +8,8 @@ WifiJnLdn2014Psql::Application.routes.draw do
     resources :reviews
   end
 
-
-
-
-
   resources :groups
-
-
   resources :reviews
-
-
-
-
 
   get "home/index"
 
@@ -31,6 +21,12 @@ WifiJnLdn2014Psql::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   resources :users #, only: [:show, :edit, :update]
+
+   resources :wifis do 
+    member do
+      get :add_favourite
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

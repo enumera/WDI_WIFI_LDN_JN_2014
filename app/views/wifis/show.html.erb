@@ -56,9 +56,9 @@
 </p>
 
 
-   <% @reviews.each do |review| %>
-      <%= review.comment %><br>
-      <% end %>
+<% @reviews.each do |review| %>
+  <%= review.comment %><br>
+  <% end %>
       
 
 
@@ -66,4 +66,5 @@
 <%= link_to 'Edit', edit_wifi_path(@wifi) %>
 <%= link_to 'Destroy', @wifi, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Create a new review', new_wifi_review_path(@wifi) %>
+<%= link_to 'Add to favourites', add_favourite_wifi_path(@wifi)%>
    
