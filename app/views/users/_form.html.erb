@@ -49,11 +49,13 @@
     <%= f.text_field :phone %>
   </div>
 
+<ul>
   <% Group.all.each do |group| %>
-    <%=group.name %>
-    <%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
+      <li><%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
+        <%=group.name %></li>
     <% end %>
     <%#= paginate @reviews %>
+<ul>
   <div class="action">
     <%= f.submit %>
     <% end %>
