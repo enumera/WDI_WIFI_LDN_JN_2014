@@ -94,8 +94,8 @@ $(document).ready(function(){
             map: map,
             title: network.business_name
           });
-          google.maps.event.addListener(marker, 'click', function() {
-                infowindow.open(map,marker);
+          google.maps.event.addListener(wifimarker, 'click', function() {
+                infowindow.open(map,wifimarker);
             });
         });
       })
@@ -211,8 +211,6 @@ $(document).ready(function(){
     console.log("autocomplete")
     mapApp.autocomplete();
   })
-  // Gwen infowindow event listener. 
-  //google.maps.event.addDomListener(window, 'load', initialize);
 
   // //Directions events listener
   // $('#directions_form').on('submit', function(event){
