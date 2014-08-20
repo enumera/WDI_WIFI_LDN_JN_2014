@@ -44,13 +44,14 @@ class WifisController < ApplicationController
   def edit
     @wifi = Wifi.find(params[:id])
     # @reviews = @wifi.reviews.order(:created_at).pages(params[:page])
-    @reviews = @wifi.reviews
+    @reviews = @wifi.reviews.page(params[:page])
   end
 
   # POST /wifis
   # POST /wifis.json
   def create
     @wifi = Wifi.new(params[:wifi])
+    @wifi.users << current_user
 
     respond_to do |format|
       if @wifi.save

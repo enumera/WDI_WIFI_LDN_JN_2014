@@ -4,4 +4,5 @@ class Review < ActiveRecord::Base
   belongs_to :wifi
   belongs_to :user
   
+  paginates_per 2
 end

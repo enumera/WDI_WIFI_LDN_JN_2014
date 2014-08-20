@@ -70,18 +70,19 @@
   </div>
   <section>
     <div id="lastdiv">
-
+  <% if !@wifi.id.nil? %>
     <h3>Reviews: ratings and comments</h3>
     <% @reviews.each do |review| %>
         <%= review.comment %><br>
-      <% end %>
-
+  <% end %>
+      <%= paginate @reviews %>
   </div>
+  <% end %>
 </section>
   <div class="actions">
     <%= f.submit %>
     <% end  %>
   </div>
 
-  <%= link_to 'Add to favourites', add_favourite_wifi_path(@wifi)%>
+ 
 
