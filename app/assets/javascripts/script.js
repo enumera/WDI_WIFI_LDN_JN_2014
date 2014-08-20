@@ -82,6 +82,9 @@ $(document).ready(function(){
         var string2 = content.toString(); 
         var string3 = network.share_scope;
         var stringConcatenated = string1 + string2; + string3;
+        var infowindow = new google.maps.InfoWindow({
+            content: stringConcatenated
+          });
         geocoder.geocode( {'address': network.postcode }, function(data, status) { 
           longP = data[0].geometry.location.B
           latP = data[0].geometry.location.k
@@ -208,6 +211,8 @@ $(document).ready(function(){
     console.log("autocomplete")
     mapApp.autocomplete();
   })
+  // Gwen infowindow event listener. 
+  //google.maps.event.addDomListener(window, 'load', initialize);
 
   // //Directions events listener
   // $('#directions_form').on('submit', function(event){
