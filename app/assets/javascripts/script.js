@@ -77,7 +77,7 @@ $(document).ready(function(){
       var geocoder = new google.maps.Geocoder();
       $.each(window.markers_info, function(i, network){
         var infowindow = new google.maps.InfoWindow({
-            content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='http://google.com'>Reviews</a></div>"
+            content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='http://google.com'>Reviews</a> | <a href='http://www.wikipedia.org/'>Add to favourite</a>"+"</div>"
           });
         geocoder.geocode( {'address': network.postcode }, function(data, status) { 
           longP = data[0].geometry.location.B
