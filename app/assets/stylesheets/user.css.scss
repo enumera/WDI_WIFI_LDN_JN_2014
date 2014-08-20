@@ -25,3 +25,87 @@
   border-width: 1px;
   border-color: #1f8dd6;
 }
+
+
+.profile-header {
+  text-align: center; 
+  color: black;
+  font-weight: 100;
+  font-size: 60px;
+  padding: 0px;
+  margin-top: 0px;
+  float: left;
+}
+
+#profile-page-wrapper {
+  width: 100%;
+  max-height: 70vh;
+  margin: 20px 0 40px 0;
+}
+
+.profile-image {
+  float: right;
+}
+
+.profile-summary {
+  float: left;
+}
+
+.profile-container {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+}
+
+.profile-div {
+/*  width: 66.5%;*/
+  text-align: center; 
+  background: #1f8dd6;
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /*float: left;*/
+}
+
+.add-more {
+/*  width: 33%;*/
+  text-align: center; 
+  background: #1f8dd6;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+/*  float: right;*/
+}
+
+.accordian {
+  width: 66.5%;
+  clear: left;
+}
+
+.user-form {
+  width:600px;
+  float: left;
+}
+
+.new-user-side {
+  width: 66.5%;
+  float: right;
+}
+
+.semi-container-left {
+  width: 66.5%;
+  float: left;
+}
+
+.semi-container-right {
+  width: 33%;
+  float: right;
+}
+
+.clear {
+  clear: both;
+}

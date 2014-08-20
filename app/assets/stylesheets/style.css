@@ -93,6 +93,7 @@ main {
 #footer-wrapper-div {
   font-size: 0;
   margin-top: 5px;
+  clear: both;
 }
 
 .FOOTER-DIV {
@@ -169,18 +170,21 @@ tr {
 }
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px) {
+/*@media only screen and (max-width : 1200px) {
 
-}
+}*/
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
+/*@media only screen and (max-width : 992px) {
 
-}
+}*/
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-
+  #wrapper {
+    width: 100%;
+  }
+  
 }
 
 /* Extra Small Devices, Phones */ 
@@ -191,80 +195,5 @@ tr {
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
   
-}
-
-
-.profile-header {
-  text-align: center; 
-  color: black;
-  font-weight: 100;
-  font-size: 60px;
-  padding: 0px;
-  margin-top: 0px;
-  float: left;
-}
-
-
-.profile-image {
-  float: right;
-}
-
-.profile-summary {
-  float: left;
-}
-
-.profile-container {
-  width: 960px;
-  margin: 0 auto;
-  clear: both;
-}
-
-.profile-div {
-/*  width: 66.5%;*/
-  text-align: center; 
-  background: #1f8dd6;
-  color: white;
-  font-size: 25px;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /*float: left;*/
-}
-
-.add-more {
-/*  width: 33%;*/
-  text-align: center; 
-  background: #1f8dd6;
-  color: white;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 25px;
-/*  float: right;*/
-}
-
-.accordian {
-  width: 66.5%;
-  clear: left;
-}
-
-.user-form {
-  width:600px;
-  float: left;
-}
-
-.new-user-side {
-  width: 66.5%;
-  float: right;
-}
-
-.semi-container-left {
-  width: 66.5%;
-  float: left;
-}
-
-.semi-container-right {
-  width: 33%;
-  float: right;
 }
 

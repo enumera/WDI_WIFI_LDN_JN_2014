@@ -1,10 +1,12 @@
+<div id="profile-page-wrapper">  
 <section>
   <div class="profile-header">
     <p>MY PROFILE PAGE:</p>
     <br>
-    <p><%= @user.first %> <%= @user.last%></p>
-  
+    <p><%= @user.first %> <%= @user.last%></p>  
   </div>
+
+
   <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
   <div class="profile-summary">
     <table>
@@ -90,6 +92,7 @@
     </div>
     <!-- Andy content here -->
   </div>
+  <div class="clear"></div>
 </section>
 
 <section class="profile-container">
@@ -122,9 +125,11 @@
       <%= f.select :group_type, options_for_select([:private, :public]) %><br>
       <%= f.submit "create" %>
     <% end %>
-
     <!-- Andy content here -->
   </div>
- 
+<div class="clear"></div>
+  </section>
+<div class="clear"></div>
+</div>
 
-</section>
+
