@@ -24,9 +24,6 @@ class UsersController <ApplicationController
       #   @user.groups << @group
       # end
 
-
-
-
   respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
