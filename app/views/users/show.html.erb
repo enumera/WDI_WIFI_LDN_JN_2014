@@ -100,18 +100,10 @@
     <div class="profile-div">MY GROUPS:</div>
    <!--  <div id="accordion-group"> -->
       <% @groups.each do |group| %>
-        <%= link_to(group.name, group)%>
-        <%=group.group_type%>
-
-        <br>
-        <div>
-          <table>
-            <tr>
-              <td>photo</td>
-              <td>name</td>
-            </tr>
-          </table>
-        </div>
+        <table>
+          <tr><h3 id="user-group-header"><%= link_to(group.name, group)%>
+          <%=group.group_type%></h3></tr>
+        </table>
      <%end%>
         <%= paginate @groups %>
    <!--  </div> -->
