@@ -61,12 +61,5 @@
     <div id="wifiarrays" data-postcode="<%=  wifi_postcode_array.to_json %>">
     </div>
 
-  <% wifi_ratings_array = @wifis.map do |wifi| %>
-    <%= wifi.business_name %>
-      <% wifi.reviews.each do |review|%>
-      <%=review.overall_rating %>
-      <%end%>
-    <%= wifi.share_scope %>
-  <% end %>
-
-  
+    <div id="hoverId" data-wifiinfo="<%= networks_data(@wifis).inspect%>">
+    </div>

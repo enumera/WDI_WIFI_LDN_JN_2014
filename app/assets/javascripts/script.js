@@ -42,6 +42,9 @@ $(document).ready(function(){
   
   var locations = $('#wifiarrays').data('postcode');
 
+  var hoverWifiAll = $('#hoverId').data('wifiinfo')
+  var hoverWifiSpecifi = hoverWifiAll
+
   mapApp = {
     positionMarker: null, 
     initializeMap: function(){
@@ -68,7 +71,7 @@ $(document).ready(function(){
               var wifimarker = new google.maps.Marker({
               position: found,
               map: map,
-              title: 'Hello World!'
+              title: hoverWifiSpecifi
            });
         });
       });
