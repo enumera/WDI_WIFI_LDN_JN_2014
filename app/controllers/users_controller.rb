@@ -17,7 +17,7 @@ class UsersController <ApplicationController
   def show
     @user = User.find(params[:id])
      @wifis = @user.wifis
-      @groups = @user.groups
+      @groups = @user.groups.page(params[:pages])
       # binding.pry
       # if !params[:group_name].nil?
       #   @group = Group.create(name: params[:group_name])

@@ -32,10 +32,8 @@
     <%= f.label :venue_type_id %><br >
     <%= f.collection_select :venue_type_id, VenueType.all, :id, :name %>
     </div>
-    <div class="field">
-      <%= f.label :venue_type %><br />
-      <%= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
-    </div>
+    
+    
   </div>
   <div id="rightdiv">
 
@@ -68,21 +66,36 @@
       <%= f.number_field :phone %>
     </div>
   </div>
+  
+
   <section>
     <div id="lastdiv">
+      <% if !@wifi.id.nil? %>
+        <h3>Reviews: ratings and comments</h3>
+        <% if @reviews.size == 0 %>
+          <p> There are no comments for this wifi </p>
+        <%else%>
+          <% @reviews.each do |review| %>
+          <%= review.comment %><br>
+          <% end %>
+          <%= paginate @reviews %>
+      <%end%> 
+    <%end%>     
+    </div>
+  
+
   <% if !@wifi.id.nil? %>
-    <h3>Reviews: ratings and comments</h3>
-    <% @reviews.each do |review| %>
-        <%= review.comment %><br>
-  <% end %>
-      <%= paginate @reviews %>
-  </div>
-  <% end %>
+       <%= form_for Review.new do |f| %>
+          <%= f.label :comment, "Add a comment:" %>
+          <%= f.text_field :comment %><br>
+          <%= f.submit "create",  %>
+      <% end %>
+  <%end%>
 </section>
   <div class="actions">
     <%= f.submit %>
     <% end  %>
-  </div>
+ </div>
 
  
 
