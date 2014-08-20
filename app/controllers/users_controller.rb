@@ -16,8 +16,13 @@ class UsersController <ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @wifis = Wifi.all
-    @groups = @user.groups
+     @wifis = @user.wifis
+      @groups = @user.groups
+      # binding.pry
+      # if !params[:group_name].nil?
+      #   @group = Group.create(name: params[:group_name])
+      #   @user.groups << @group
+      # end
 
   respond_to do |format|
       format.html # show.html.erb

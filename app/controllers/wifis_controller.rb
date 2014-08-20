@@ -88,4 +88,21 @@ class WifisController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def add_favourite
+
+    @wifi = Wifi.find(params[:id])
+  
+    
+    if @wifi.users.include? current_user
+      redirect_to wifi_path, notice: 'This is already one of your favourites'
+     
+    else
+      @wifi.users << current_user
+       @wifi.save
+      
+      redirect_to wifi_path, notice: 'You have successfully made this a favourite'
+      
+    end
+  end
 end

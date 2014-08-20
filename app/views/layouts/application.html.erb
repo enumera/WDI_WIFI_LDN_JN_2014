@@ -24,7 +24,7 @@
         <% if user_signed_in? %>
           <%= current_user.email %><br>
          
-          <%= link_to "EDIT PROFILE", edit_user_registration_path %><br>
+          <%= link_to "EDIT PROFILE", edit_user_path(current_user) %><br>
          
           <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
 
