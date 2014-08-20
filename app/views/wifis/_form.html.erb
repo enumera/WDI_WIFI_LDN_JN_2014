@@ -27,20 +27,18 @@
     <div class="field">
       <%= f.label :share_scope %><br />
       <%= f.select :share_scope, options_for_select([:Private, :Public, :"Share with groups"]) %>
-
-
-
-  </div>
-  <div class="field">
+    </div>
+    <div class="field">
     <%= f.label :venue_type_id %><br >
     <%= f.collection_select :venue_type_id, VenueType.all, :id, :name %>
-
-
     </div>
-    <!-- <div class="field">
+    <div class="field">
       <%= f.label :venue_type %><br />
       <%= f.select :venue_type, options_for_select([:Cafe, :Restaurant, :Library, :Other]) %>
-    </div> -->
+    </div>
+  </div>
+  <div id="rightdiv">
+
     <div class="field">
       <%= f.label :business_name %><br />
       <%= f.text_field :business_name %>
@@ -70,33 +68,20 @@
       <%= f.number_field :phone %>
     </div>
   </div>
-    
-  <div id="rightdiv">
+  <section>
+    <div id="lastdiv">
+
     <h3>Reviews: ratings and comments</h3>
-    <div class="field">
-      <%#= f.label :power_point_availability %><br />
-      <%#= f.text_field :power_point_availability %>
-    </div>
-    <div class="field">
-      <%#= f.label :quietness %><br />
-      <%#= f.text_field :quietness %>
-    </div>
-    <div class="field">
-      <%#= f.label :signal_strength %><br />
-      <%#= f.text_field :signal_strength %>
-    </div>
-    <div class="field">
-      <%#= f.label :speed %><br />
-      <%#= f.text_field :speed %>
-    </div>
-    <div class="field">
-      <%#= f.label :stability %><br />
-      <%#= f.text_field :stability %>
-    </div>
+    <% @reviews.each do |review| %>
+        <%= review.comment %><br>
+      <% end %>
+
   </div>
-  
+</section>
   <div class="actions">
     <%= f.submit %>
-  
+    <% end  %>
   </div>
-<% end %>
+
+  <%= link_to 'Add to favourites', add_favourite_wifi_path(@wifi)%>
+

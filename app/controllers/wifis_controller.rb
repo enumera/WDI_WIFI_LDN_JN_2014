@@ -43,6 +43,8 @@ class WifisController < ApplicationController
   # GET /wifis/1/edit
   def edit
     @wifi = Wifi.find(params[:id])
+    # @reviews = @wifi.reviews.order(:created_at).pages(params[:page])
+    @reviews = @wifi.reviews
   end
 
   # POST /wifis
