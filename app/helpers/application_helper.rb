@@ -9,6 +9,5 @@ module ApplicationHelper
           postcode: wifi.postcode
         }
     end
-
   end
 end

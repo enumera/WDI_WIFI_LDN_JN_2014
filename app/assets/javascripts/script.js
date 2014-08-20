@@ -76,14 +76,8 @@ $(document).ready(function(){
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
       var geocoder = new google.maps.Geocoder();
       $.each(window.markers_info, function(i, network){
-        console.log(network)
-        var string1 = network.business_name;
-        var content = network.reviews;
-        var string2 = content.toString(); 
-        var string3 = network.share_scope;
-        var stringConcatenated = string1 + string2; + string3;
         var infowindow = new google.maps.InfoWindow({
-            content: stringConcatenated
+            content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='http://google.com'>Reviews</a></div>"
           });
         geocoder.geocode( {'address': network.postcode }, function(data, status) { 
           longP = data[0].geometry.location.B
