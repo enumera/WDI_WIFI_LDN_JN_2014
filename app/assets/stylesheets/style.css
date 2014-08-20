@@ -81,11 +81,15 @@ main {
   padding: 30px 0;
   font-size: 25px;
   text-align: center;
-  min-height: 15vh;
+  min-height: 10vh;
   }
 
 .FOOTER-DIV:hover {
   opacity: 0.5;
+}
+
+.FOOTER-DIV a:visited {
+  color: white;
 }
 
 a {
