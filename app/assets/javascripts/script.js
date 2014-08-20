@@ -89,8 +89,11 @@ $(document).ready(function(){
           var wifimarker = new google.maps.Marker({
             position: found,
             map: map,
-            title: stringConcatenated
+            title: network.business_name
           });
+          google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(map,marker);
+            });
         });
       })
     },
