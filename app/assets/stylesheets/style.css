@@ -10,32 +10,50 @@ html, body {
 }
 
 #wrapper {
-  width: 960px;
+  width: 992px;
   margin: 0 auto;
 }
 
+#header-wrapper-div {
+  /*clear: both;*/
+  font-size: 0;
+  margin-bottom: 5px;
+}
+
 .header-divs {
+  vertical-align: top;
   text-align: center; 
   background: #1f8dd6;
   color: white;
   font-weight: 100;
-  font-size: 25px; 
-  float: left;
+  font-size: 25px;
+  display: inline-block;
   height: 15vh;
-  width: 33.33%;
+  margin-right: 0.5% ;
+  width: 33%;
 }
 
 .header-divs a:visited {
   color: white;
 }
 
+#header-div3 {
+  margin-right: 0px;
+}
+
 #header-div1, #header-div3 {
   padding: 15px 20px 0;
+  cursor: pointer;
+}
+
+#header-div3 a {
+  display: block;
+  width: 100%;
 }
 
 #header-div2 {
   font-size: 60px;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 #header-div1 {
@@ -67,25 +85,41 @@ html, body {
 }
 
 main {
-  min-height: 95vh;
+  min-height: 70vh;
   color: #1f8dd6;
   font-size: 20px;
 }
 
+#footer-wrapper-div {
+  font-size: 0;
+  margin-top: 5px;
+}
+
 .FOOTER-DIV {
+  vertical-align: top;
+  text-align: center; 
   background: #1f8dd6;
   color: white;
-  display: inline-block;
-  width: 33%;
-  margin: 0 auto;
-  padding: 30px 0;
+  font-weight: 100;
   font-size: 25px;
-  text-align: center;
-  min-height: 10vh;
+  display: inline-block;
+  height: 15vh;
+  margin-right: 0.5% ;
+  width: 33%;
   }
+
+.FOOTER-DIV:last-child {
+  margin-right: 0px;
+}
 
 .FOOTER-DIV:hover {
   opacity: 0.5;
+}
+
+.FOOTER-DIV a {
+  display: block;
+  color: white;
+  padding-top: 30px;
 }
 
 .FOOTER-DIV a:visited {
@@ -114,7 +148,6 @@ p {
   padding: 0;
 }
 
-
 main h1 {
   display: inline-block;
   font-weight: 300;
@@ -135,41 +168,30 @@ tr {
   text-align: left; 
 }
 
-/*@media only screen and (max-width: 720px) {
-  #wrapper {
-    width: 100%;
-  }
-  .FOOTER-DIV {
-    width: 33.33%;
-  }
-  #header-div1, #header-div3 {
-    line-height: 4vh;
-    padding: 25px;
-    font-size: 20px;
-  }
-  #header-div1 {
-    line-height: 6vh; 
-  }
-  #header-div2 {
-    font-size: 50px;
-    padding-top: 10px;
-  }
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
 }
 
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
 
-@media only screen and (max-width: 460px) {
-  .page-wrap {
-    width: 100%;
-  }
+}
 
-  .feature {
-    display: inline-block;
-    width: 100%;
-  }
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
   
-
 }
-*/
 
 
 .profile-header {
@@ -246,6 +268,3 @@ tr {
   float: right;
 }
 
-#footer-wrapper-div {
-  clear: both;
-}

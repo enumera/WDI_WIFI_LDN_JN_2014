@@ -213,7 +213,7 @@ $(document).ready(function(){
   // })
 
   //Geolocation event listener;
-  $('#current_position').on('click', function(){
+  $('#header-div1').on('click', function(){
     if(navigator.geolocation){
       mapApp.geolocation();
     }else{
