@@ -46,6 +46,10 @@
         <div>
           <table>
             <tr>
+              <td>Name:</td>
+              <td><%= link_to wifi.name, edit_wifi_path(wifi.id) %></td>
+            </tr>
+            <tr>
               <td>Password:</td>
               <td><%= wifi.password %></td>
             </tr>
