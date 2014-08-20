@@ -98,7 +98,7 @@ class WifisController < ApplicationController
   
     
     if @wifi.users.include? current_user
-      redirect_to wifi_path, notice: 'This is already one of your favourites'
+      redirect_to edit_wifi_path(@wifi), notice: 'This is already one of your favourites'
      
     else
       @wifi.users << current_user

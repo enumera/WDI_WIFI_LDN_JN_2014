@@ -54,9 +54,6 @@
     <%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
     <% end %>
     <%= paginate @reviews %>
-
-
-
   <div class="action">
     <%= f.submit %>
     <% end %>
