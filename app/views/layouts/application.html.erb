@@ -16,29 +16,29 @@
 </head>
 <body>
   <div id="wrapper">
-    <div class="header-divs" id="header-div1">WIFI NEAR ME</div>
-    <div class="header-divs" id="header-div2">W<i class="flaticon-wifi42"></i>FIND</div>
+    <div id="header-wrapper-div">
+      <div class="header-divs" id="header-div1">WIFI NEAR ME</div>
+      <div class="header-divs" id="header-div2">W<i class="flaticon-wifi42"></i>FIND</div>
 
-    <div class="header-divs" id="header-div3">SIGN IN/OUT
-      <div id="dropdowndiv">
-        <% if user_signed_in? %>
-          <%= current_user.email %><br>
-         
-          <%= link_to "EDIT PROFILE", edit_user_path(current_user) %><br>
-         
-          <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+      <div class="header-divs" id="header-div3"><%= link_to "SIGN IN/OUT", login_path %>
+        <div id="dropdowndiv">
+          <% if user_signed_in? %>
+            <%= current_user.email %><br>
+           
+            <%= link_to "EDIT PROFILE", edit_user_path(current_user) %><br>
+           
+            <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
 
-        <% else %>
+          <% else %>
 
-          <%= link_to "SIGN IN", login_path %><br>
-          <%=link_to "SIGN UP", new_user_registration_path %><br>
-          <%= link_to "SIGN IN WITH GOOGLE", user_omniauth_authorize_path(:google_oauth2)%>
+            <%= link_to "SIGN IN/OUT", login_path %><br>
+            <%=link_to "SIGN UP", new_user_registration_path %><br>
+            <%= link_to "SIGN IN WITH GOOGLE", user_omniauth_authorize_path(:google_oauth2)%>
 
-         <% end %>
-       </div>
-
+           <% end %>
+         </div>
+      </div>
     </div>
-
     <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -56,15 +56,15 @@
         <% if current_user %>
         <%= link_to "MY PROFILE", user_path(current_user) %>
         <% else %>
-        <%= link_to "Sign in", login_path %>
+        <%= link_to "MY PROFILE", login_path %>
         <% end %>
       </div>
       <div class="FOOTER-DIV">
         <%= link_to "ADD A WIFI", new_wifi_path%>
       </div>
     </div>
+  
   </div>
 
- 
 </body>
 </html>
