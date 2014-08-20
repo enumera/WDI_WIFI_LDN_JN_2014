@@ -81,40 +81,39 @@ u12 = User.create(email: "user12@email.com", password: "password", password_conf
 u13 = User.create(email: "user13@email.com", password: "password", password_confirmation: "password")
 u14 = User.create(email: "user14@email.com", password: "password", password_confirmation: "password")
 
+w1 = Wifi.create(name: "Wifi name A1", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
+w2 = Wifi.create(name: "Wifi name B1", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "SW11 4EG", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "private")
 
-w1 = Wifi.create(name: "Wifi name A1", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-w2 = Wifi.create(name: "Wifi name B1", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "SW11 4EG", country: "Greate Britain", phone: "+00 44 1234 5678910")
+w3 = Wifi.create(name: "Wifi name C1", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "NW1 0LE", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
+w4 = Wifi.create(name: "Wifi name D1", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "NW6 7AY", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "private")
 
-w3 = Wifi.create(name: "Wifi name C1", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "NW1 0LE", country: "Greate Britain", phone: "+00 44 1234 5678910")
-w4 = Wifi.create(name: "Wifi name D1", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "NW6 7AY", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+w5 = Wifi.create(name: "Wifi name E1", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "SW6 2TQ", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "public")
+w6 = Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E14 4DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "public")
+w7 = Wifi.create(name: "Wifi name A2", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "NW6 1PB", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "private")
+w8 = Wifi.create(name: "Wifi name B2", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "E11 4DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
 
-w5 = Wifi.create(name: "Wifi name E1", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "SW6 2TQ", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-w6 = Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E14 4DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-w7 = Wifi.create(name: "Wifi name A2", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "NW6 1PB", country: "Greate Britain", phone: "+00 44 1234 5678910")
-w8 = Wifi.create(name: "Wifi name B2", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "E11 4DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+w9 = Wifi.create(name: "Wifi name C2", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 5DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
+w10 = Wifi.create(name: "Wifi name D2", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "G60 5JU", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "public")
 
-w9 = Wifi.create(name: "Wifi name C2", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 5DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-w10 = Wifi.create(name: "Wifi name D2", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "G60 5JU", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+w11 = Wifi.create(name: "Wifi name E2", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "public")
+w12 = Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "private")
 
-w11 = Wifi.create(name: "Wifi name E2", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "EX11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-w12 = Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+w13 = Wifi.create(name: "Wifi name A1", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
+w14 = Wifi.create(name: "Wifi name B1", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
 
-w13 = Wifi.create(name: "Wifi name A1", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-w14 = Wifi.create(name: "Wifi name B1", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+w15 = Wifi.create(name: "Wifi name C1", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
+w16 = Wifi.create(name: "Wifi name D1", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "public")
 
-w15 = Wifi.create(name: "Wifi name C1", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-w16 = Wifi.create(name: "Wifi name D1", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+w17 = Wifi.create(name: "Wifi name E1", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "private")
+w18 = Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "public")
+w19 = Wifi.create(name: "Wifi name A2", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
+w20 = Wifi.create(name: "Wifi name B2", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "private")
 
-w17 = Wifi.create(name: "Wifi name E1", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-w18 = Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-w19 = Wifi.create(name: "Wifi name A2", password: "pass", free_or_paid: true, business_name: "Venue A", address_line_1: "1 LOOOOOOONNNG Street", address_line_2: "BIIIIIG town", city: "BIIIIIIIIG CITY", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-w20 = Wifi.create(name: "Wifi name B2", password: "pass", free_or_paid: true, business_name: "Venue B", address_line_1: "1 any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
+w21 = Wifi.create(name: "Wifi name C2", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910", share_scope: "public")
+w22 = Wifi.create(name: "Wifi name D2", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "public")
 
-w21 = Wifi.create(name: "Wifi name C2", password: "pass", free_or_paid: true, business_name: "Biiig venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "Greate Britain", phone: "+00 44 1234 5678910")
-w22 = Wifi.create(name: "Wifi name D2", password: "wimanlfuanfjflklkfkljfkf////", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-
-w23 = Wifi.create(name: "Wifi name E2", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
-w24 = Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000")
+w23 = Wifi.create(name: "Wifi name E2", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "private")
+w24 = Wifi.create(name: "homeakllfja", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, business_name: "BiiiIIIIIIIg venue name B", address_line_1: "1102xx any street", address_line_2: "Any town", city: "Any City", postcode: "E11 3DS", country: "BIIIIIGGGG COOUNTRY", phone: "+00 44 1234 56789100000", share_scope: "public")
 
 
 
@@ -123,23 +122,23 @@ g2.users << [u1, u14, u11]
 g3.users << [u2, u3, u4, u11, u13]
 g4.users << [u5, u6 ,u7, u2]
 
-r1 = Review.create(comment: "This place is great1")
-r2 = Review.create(comment: "This place is great2")
-r3 = Review.create(comment: "This place is greeeeeaaaaaaaaaaaAAAat")
-r4 = Review.create(comment: "This place is bad")
-r5 = Review.create(comment: "This place is wonderful. I so pleased I found it")
+r1 = Review.create(comment: "This place is, great1", overall_rating: 5)
+r2 = Review.create(comment: "This place is great2", overall_rating: 4)
+r3 = Review.create(comment: "This place is greeeeeaaaaaaaaaaaAAAat", overall_rating: 5)
+r4 = Review.create(comment: "This place is bad", overall_rating: 3)
+r5 = Review.create(comment: "This place is wonderful. I so pleased I found it", overall_rating: 2)
 r6 = Review.create(comment: "This place is supercool.this is a long commment, commentcomementfjklajfljasljfljlfjljlajflajljklj
-  lasjlkfjsajkllksfjlkjlfkajlkfjlksafjlksl")
-r7 = Review.create(comment: "This place is great7")
-r8 = Review.create(comment: "This place is great8")
-r9 = Review.create(comment: "This place is great9")
-r10 = Review.create(comment: "This place is great10")
-r11 = Review.create(comment: "This place is great11")
-r12 = Review.create(comment: "This place is great12")
-r13 = Review.create(comment: "This place is great13")
-r14 = Review.create(comment: "This place is great14")
-r15 = Review.create(comment: "This place is great15")
-r16 = Review.create(comment: "This place is great16")
+  lasjlkfjsajkllksfjlkjlfkajlkfjlksafjlksl", overall_rating: 5)
+r7 = Review.create(comment: "This place is great7", overall_rating: 5)
+r8 = Review.create(comment: "This place is great8", overall_rating: 5)
+r9 = Review.create(comment: "This place is great9", overall_rating: 1)
+r10 = Review.create(comment: "This place is great10", overall_rating: 5)
+r11 = Review.create(comment: "This place is great11", overall_rating: 3)
+r12 = Review.create(comment: "This place is great12", overall_rating: 5)
+r13 = Review.create(comment: "This place is great13", overall_rating: 4)
+r14 = Review.create(comment: "This place is great14", overall_rating: 1)
+r15 = Review.create(comment: "This place is great15", overall_rating: 2)
+r16 = Review.create(comment: "This place is great16", overall_rating: 4)
 
 r1.user = u1
 r2.user = u1
@@ -191,8 +190,6 @@ w3.reviews << r12
 w3.reviews << r13
 w3.reviews << r14
 w3.reviews << r15
-
-
 
 
 
