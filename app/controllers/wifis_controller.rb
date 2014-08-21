@@ -58,7 +58,9 @@ class WifisController < ApplicationController
     @wifi = Wifi.new(params[:wifi])
     @wifi.users << current_user
 
+
     binding.pry
+
 
     respond_to do |format|
       if @wifi.save

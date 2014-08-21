@@ -3,8 +3,10 @@ class Wifi < ActiveRecord::Base
 
   belongs_to :venue_type
   has_many :reviews
-  has_many :opening_times
+
   has_and_belongs_to_many :users
+  has_and_belongs_to_many :groups
+
 
   mount_uploader :image, VenueImageUploader
 
