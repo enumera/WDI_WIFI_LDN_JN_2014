@@ -27,23 +27,16 @@
         </div>
       </div>
 
-      <div class="header-divs" id="header-div3"><%= link_to "SIGN IN/OUT", login_path %>
-        <div id="dropdowndiv">
+      <div class="header-divs" id="header-div3">
           <% if user_signed_in? %>
-            <%= current_user.email %><br>
-           
-            <%= link_to "EDIT PROFILE", edit_user_path(current_user) %><br>
-           
+          
             <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
 
           <% else %>
 
-            <%= link_to "SIGN IN/OUT", login_path %><br>
-            <%=link_to "SIGN UP", new_user_registration_path %><br>
-            <%= link_to "SIGN IN WITH GOOGLE", user_omniauth_authorize_path(:google_oauth2)%>
-
-           <% end %>
-        </div>
+            <%= link_to "SIGN IN", login_path %>
+            
+          <% end %>
       </div>
     </div>
     <main>

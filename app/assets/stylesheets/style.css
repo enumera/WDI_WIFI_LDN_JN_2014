@@ -78,7 +78,7 @@ html, body {
   opacity: 0.5;
 }
 
-#dropdowndiv {
+/*#dropdowndiv {
   position: relative;
   background: #1f8dd6;
   opacity: 0.9;
@@ -87,7 +87,7 @@ html, body {
   display: none;
   top: 23px;
   z-index: 10000000;
-}
+}*/
 
 #header-div3:hover > #dropdowndiv {
   display: block;
