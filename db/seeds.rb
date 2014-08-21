@@ -191,10 +191,21 @@ w3.reviews << r13
 w3.reviews << r14
 w3.reviews << r15
 
+#----------- Gwen Data ---------
 
+u15 = User.create(email: "mike_harris@email.com", password: "password", password_confirmation: "password", first: "Mike", last: "Harris", occupation: "TA")
 
+u15 = User.create(email: "jarkyn_s@email.com", password: "password", password_confirmation: "password", first: "Jarkyn", last: "S", occupation: "TA")
 
+u16 = User.create(email: "mathilda_thompson", password: "password", password_confirmation: "password", first: "Malthida", last: "Thompson")
 
+u17 = User.create(email: "gerry_mathe", password: "password", password_confirmation: "password", first: "Gerry", last: "Mathe")
+
+u18 = User.create(email: "michael_pavling", password: "password", password_confirmation: "password", first: "Michael", last: "Pavling")
+
+u19 = User.create(email: "laura_hastings", password: "password", password_confirmation: "password", first: "Laura", last: "Hasting")
+
+w25 = Wifi.create(name: "Regency Cafe - Guest", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, share_scope: "public", business_name: "Regency Cafe", address_line_1: "17-19 Regency Street", city: "London", postcode: "SW1P 4BY", country: "UK", phone: "020 7821 6596")
 
 
 
