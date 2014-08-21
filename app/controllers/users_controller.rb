@@ -17,7 +17,7 @@ class UsersController <ApplicationController
   def show
     @user = User.find(params[:id])
      @wifis = @user.wifis
-      @groups = @user.groups.page(params[:pages])
+      @groups = @user.groups.order(:created_at).page(params[:pages])
       # binding.pry
       # if !params[:group_name].nil?
       #   @group = Group.create(name: params[:group_name])
@@ -45,6 +45,12 @@ class UsersController <ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+
+    @groups = Group.where(group_type: "public")
+    @groups << current_user.groups
+    @groups.flatten!.uniq!
+    binding.pry
+
   end
 
   # POST /users
