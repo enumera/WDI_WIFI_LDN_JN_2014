@@ -1,17 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <em><%= @group.name %></em> <br>
+<div id="group-show-wrapper">
+  <h6 id="group-name-title"><%= @group.name %></h6>
+    <div id="groups-show-div">
+      <h5>Wifi Networks in this Group:</h5>
+        <table>
+          <% @wifis.each do |wifi| %>
+            <tr>
+              <td><%= link_to(wifi.name, wifi) %></td>
+              <td><%= link_to 'Add this wifi to my favourites', add_favourite_wifi_path(wifi)%></td>
+            </tr>
+          <%end%>
+        </table>
+    </div>
 
-     <% @wifis.each do |wifi| %>
-
-          <em>Wifi Name</em> <%=wifi.name %> 
-           <%= link_to 'Add this wifi to my favourites', add_favourite_wifi_path(wifi)%> </br>
-        <%end%>
-      
-</p>
-
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'back to your profile', user_path(current_user) %>
+  <div class="group-show-page-link">
+    <%= link_to 'EDIT', edit_group_path(@group), {:style=>'color:#FFFFFF;'} %>
+  </div>
+</div>

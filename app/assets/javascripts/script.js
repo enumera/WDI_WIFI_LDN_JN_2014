@@ -163,11 +163,6 @@ $(document).ready(function(){
     
   });
 
-  mapApp.initializeMap();
-  $("#burger-container-div").on('click', function() {
-    $("#burger-menu").slideToggle()
-  });
-
   $('#header-div1').on('click', function(){
     if(!!$("#map-container").length){
       if(navigator.geolocation){
@@ -181,4 +176,24 @@ $(document).ready(function(){
     }
     
   });
+
+  mapApp.initializeMap();
+
+  $("#burger-container-div").on('click', function() {
+    $("#burger-menu").slideToggle()
+  });
+
+  $('#responsive-wifi-find-me').on('click', function(){
+    if(!!$("#map-container").length){
+      if(navigator.geolocation){
+        mapApp.geolocation();
+      }else{
+        alert('Geolocation not available in this browser');
+      }
+    }
+    else{
+      document.location.href = "/"
+    } 
+  });
+ 
 })

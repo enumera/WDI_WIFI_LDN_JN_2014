@@ -250,6 +250,9 @@ tr {
     background: #1f8dd6;
     margin: 10px 0;
     padding: 10px 0;
+    color: white;
+    cursor: pointer;
+    text-align: center;
   }
 
   #burger-menu li a {
@@ -260,7 +263,6 @@ tr {
   .FOOTER-DIV {
     display: none;
   }
- 
 }
 
 /* Custom, iPhone Retina */ 
