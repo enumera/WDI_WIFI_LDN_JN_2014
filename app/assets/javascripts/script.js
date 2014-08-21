@@ -217,11 +217,17 @@ $(document).ready(function(){
 
   //Geolocation event listener;
   $('#header-div1').on('click', function(){
-    if(navigator.geolocation){
-      mapApp.geolocation();
-    }else{
-      alert('Geolocation not available in this browser');
+    if(!!$("#map-container").length){
+      if(navigator.geolocation){
+        mapApp.geolocation();
+      }else{
+        alert('Geolocation not available in this browser');
+      }
     }
+    else{
+      document.location.href = "/"
+    }
+    
   });
 
   mapApp.initializeMap();
