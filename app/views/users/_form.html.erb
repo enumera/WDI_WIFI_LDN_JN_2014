@@ -40,21 +40,32 @@
     <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
-  <div class="field">
-    <%= f.label :role %>
-    <%= f.select :role, options_for_select([:default, :other]) %>
-  </div>
+
   <div class="field">
     <%= f.label :phone %>
     <%= f.text_field :phone %>
   </div>
 
 <ul>
+
+  <% if current_user.id.nil? %>
   <% Group.all.each do |group| %>
       <li><%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
         <%=group.name %></li>
     <% end %>
-    <%#= paginate @reviews %>
+
+    <%else%>
+
+       
+          <% @groups.all.each do |group| %>
+      <li><%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
+        <%=group.name %></li>
+    <% end %>
+
+    <%end%>
+
+
+
 <ul>
   <div class="action">
     <%= f.submit %>
