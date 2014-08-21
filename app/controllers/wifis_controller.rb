@@ -34,6 +34,10 @@ class WifisController < ApplicationController
   # GET /wifis/new.json
   def new
     @wifi = Wifi.new
+    @user = current_user
+    @groups = Group.where(group_type: "public")
+    @groups << current_user.groups
+    @groups.flatten!.uniq!
 
     respond_to do |format|
       format.html # new.html.erb
@@ -53,7 +57,11 @@ class WifisController < ApplicationController
   def create
     @wifi = Wifi.new(params[:wifi])
     @wifi.users << current_user
+      groups_to_wifi =  params[:user][:group_ids]
 
+      groups_to_wifi.each do |group|
+        @wifi.groups << Group.find(group)
+      end
     respond_to do |format|
       if @wifi.save
         format.html { redirect_to edit_wifi_path(@wifi), notice: 'Wifi was successfully created.' }
@@ -98,13 +106,13 @@ class WifisController < ApplicationController
     @wifi = Wifi.find(params[:id])
     
     if @wifi.users.include? current_user
-      redirect_to edit_wifi_path(@wifi), notice: 'This is already one of your favourites'
+      redirect_to user_path(current_user), notice: 'This is already one of your favourites'
      
     else
       @wifi.users << current_user
        @wifi.save
       
-      redirect_to wifi_path, notice: 'You have successfully made this a favourite'
+      redirect_to user_path(current_user), notice: 'You have successfully made this a favourite'
       
     end
   end

@@ -34,16 +34,20 @@
     </div>  
       <div class="field">
       <%= f.label :powerpoint %><br />
-      <%= f.number_field :powerpoint %>
+      <%= f.number_field :powerpoint, in: 0..20 %>
     </div>  
      <div class="field">
       <%= f.label :number_of_seats %><br />
-      <%= f.number_field :number_of_seats %>
+      <%= f.number_field :number_of_seats, in: 0..100 %>
     </div> 
 
       <div class="field">
     <%= f.label :reservation_possible %><br />
     <%= f.check_box :reservation_possible %>
+  </div>
+     <div class="field">
+    <%= f.label :overall_rating %><br />
+    <%= f.number_field :overall_rating, in: 0..5 %>
   </div>
   </div>
   <div id="rightdiv">
@@ -76,6 +80,13 @@
       <%= f.label :phone %><br />
       <%= f.text_field :phone %>
     </div>
+  <% if @wifi.id.nil? %>
+    <h3> Which one of your groups to want to assign this new wifi ?</h3>
+      <% @groups.each do |group| %>
+      <li><%= check_box_tag 'user[group_ids][]', group.id, nil, id: "user_groups_ids_#{group.id}" %>
+        <%=group.name %></li>
+    <% end %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
