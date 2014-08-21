@@ -18,7 +18,7 @@ WifiJnLdn2014Psql::Application.routes.draw do
   end 
 
 
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" , registrations: :registrations}
 
   resources :users #, only: [:show, :edit, :update]
 

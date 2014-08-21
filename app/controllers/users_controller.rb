@@ -19,8 +19,7 @@
     @wifis = @user.wifis
     @groups = @user.groups.order(:created_at).page(params[:page])
 
-
-      # binding.pry
+     
       # if !params[:group_name].nil?
       #   @group = Group.create(name: params[:group_name])
       #   @user.groups << @group
@@ -58,10 +57,18 @@
   # POST /users.json
   def create
     @user = User.new(params[:user])
-     UserMailer.registration_confirmation(@user).deliver
+
+      # groups = Group.where(group_type: "public")
+      # groups.each do |group|
+      #   @user.groups << group
+      # end
+
+    # @user.groups << Group.where(group_type: "public")
+    UserMailer.registration_confirmation(@user).deliver
 
     respond_to do |format|
       if @user.save
+
         format.html { redirect_to @user, notice: 'user was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
@@ -69,6 +76,7 @@
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    
      UserMailer.registration_confirmation(@user).deliver
   end
 
