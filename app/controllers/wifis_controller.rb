@@ -1,4 +1,5 @@
 class WifisController < ApplicationController
+    before_filter :authenticate_user!
   # GET /wifis
   # GET /wifis.json
   def index
@@ -95,7 +96,6 @@ class WifisController < ApplicationController
   def add_favourite
 
     @wifi = Wifi.find(params[:id])
-  
     
     if @wifi.users.include? current_user
       redirect_to edit_wifi_path(@wifi), notice: 'This is already one of your favourites'
