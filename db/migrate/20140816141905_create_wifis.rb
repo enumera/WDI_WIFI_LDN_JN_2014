@@ -11,7 +11,7 @@ class CreateWifis < ActiveRecord::Migration
       t.string :city
       t.string :postcode
       t.string :country
-      t.integer :phone
+      t.string :phone
 
       t.timestamps
     end

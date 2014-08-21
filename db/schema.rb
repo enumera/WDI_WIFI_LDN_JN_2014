@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140819191401) do
+ActiveRecord::Schema.define(:version => 20140821073536) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -111,10 +111,13 @@ ActiveRecord::Schema.define(:version => 20140819191401) do
     t.string   "postcode"
     t.string   "country"
     t.integer  "phone"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.integer  "venue_type_id"
     t.text     "image"
+    t.integer  "powerpoint"
+    t.integer  "number_of_seats"
+    t.boolean  "reservation_possible"
   end
 
 end
