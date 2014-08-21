@@ -58,6 +58,8 @@ class WifisController < ApplicationController
     @wifi = Wifi.new(params[:wifi])
     @wifi.users << current_user
 
+    binding.pry
+
     respond_to do |format|
       if @wifi.save
         format.html { redirect_to edit_wifi_path(@wifi), notice: 'Wifi was successfully created.' }
