@@ -26,6 +26,7 @@ $(document).ready(function(){
   var mapOptions, canvas, map;
 
   //Autocomplete /search variables
+  // Gwen had to turn off this variable for the individual json to work! Just may have to add another little variable in the individual marker function.
   var infowindow = new google.maps.InfoWindow();
   var marker = new google.maps.Marker({
       map: map //one on the left is our key(from the google api), the left one is our value
@@ -35,18 +36,8 @@ $(document).ready(function(){
 
   // Trying to get wifi marker to appear
 
-  //var wifiLatlng = new google.maps.LatLng(51.475434,-0.155789);
-
   var longP, latP;
 
-  
-  //var locations = ["SW11 4EG", "NW1 0LE", "NW6 7AY", "SW6 2TQ"]
-  
-  var locations = $('#wifiarrays').data('postcode');
-
-  var hoverWifiAll = $('#hoverId').data('wifiinfo')
-
-  console.log(hoverWifiAll)
   var infowindow = null;
   mapApp = {
     positionMarker: null, 
@@ -57,15 +48,16 @@ $(document).ready(function(){
         mapTypeId:google.maps.MapTypeId.ROADMAP
       };
       canvas = document.getElementById('googleMap');
-      console.log("canvas", canvas)
+      // console.log("canvas", canvas)
       if(canvas != null){
         map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         var geocoder = new google.maps.Geocoder();
         $.each(window.markers_info, function(i, network){
-          infowindow = new google.maps.InfoWindow({
+          var infowindow = new google.maps.InfoWindow({
               content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='/wifis/"+network.wifi_id+"/edit'>Reviews</a> | <a href='/wifis/"+network.wifi_id+"/add_favourite'>Add to favourite</a>"+"</div>"
             });
+          console.log(infowindow);
           geocoder.geocode( {'address': network.postcode }, function(data, status) { 
             longP = data[0].geometry.location.B
             latP = data[0].geometry.location.k
@@ -75,6 +67,8 @@ $(document).ready(function(){
               map: map,
               title: network.business_name
             });
+            console.log(longP);
+            console.log(latP);
             google.maps.event.addListener(wifimarker, 'click', function() {
                   if(infowindow != null){
                     infowindow.close()
