@@ -2,10 +2,11 @@
 
 <p>
   <b>Name:</b>
-  <%= @group.name %> <br>
+  <em><%= @group.name %></em> <br>
 
      <% @wifis.each do |wifi| %>
-          <%=wifi.name %> 
+
+          <em>Wifi Name</em> <%=wifi.name %> 
            <%= link_to 'Add this wifi to my favourites', add_favourite_wifi_path(wifi)%> </br>
         <%end%>
       

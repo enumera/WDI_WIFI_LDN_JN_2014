@@ -34,16 +34,20 @@
     </div>  
       <div class="field">
       <%= f.label :powerpoint %><br />
-      <%= f.number_field :powerpoint %>
+      <%= f.number_field :powerpoint, in: 0..20 %>
     </div>  
      <div class="field">
       <%= f.label :number_of_seats %><br />
-      <%= f.number_field :number_of_seats %>
+      <%= f.number_field :number_of_seats, in: 0..100 %>
     </div> 
 
       <div class="field">
     <%= f.label :reservation_possible %><br />
     <%= f.check_box :reservation_possible %>
+  </div>
+     <div class="field">
+    <%= f.label :overall_rating %><br />
+    <%= f.number_field :overall_rating, in: 0..5 %>
   </div>
   </div>
   <div id="rightdiv">

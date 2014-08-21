@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140821133949) do
+ActiveRecord::Schema.define(:version => 20140821151817) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20140821133949) do
     t.integer  "powerpoint"
     t.integer  "number_of_seats"
     t.boolean  "reservation_possible"
+    t.integer  "overall_rating"
   end
 
 end
