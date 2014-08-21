@@ -27,7 +27,7 @@ $(document).ready(function(){
 
   //Autocomplete /search variables
   // Gwen had to turn off this variable for the individual json to work! Just may have to add another little variable in the individual marker function.
-  //var infowindow = new google.maps.InfoWindow();
+  var infowindow = new google.maps.InfoWindow();
   var marker = new google.maps.Marker({
       map: map //one on the left is our key(from the google api), the left one is our value
   });
