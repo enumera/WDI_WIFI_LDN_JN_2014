@@ -37,8 +37,7 @@ $(document).ready(function(){
 
   //var wifiLatlng = new google.maps.LatLng(51.475434,-0.155789);
 
-  var longP
-  var latP
+  var longP, latP;
 
   
   //var locations = ["SW11 4EG", "NW1 0LE", "NW6 7AY", "SW6 2TQ"]
@@ -48,24 +47,7 @@ $(document).ready(function(){
   var hoverWifiAll = $('#hoverId').data('wifiinfo')
 
   console.log(hoverWifiAll)
-
-//   var len = hoverWifiAll.length
-//   for (var i=0; i<len; ++i) {
-//   if (i in hoverWifiAll) {
-//     var s = hoverWifiAll[i];
-//     console.log(s)
-//   }
-// } 
-
-  // var hoverWifiSpecific = hoverWifiAll.forEach(function(postcode2){
-  //   console.log(postcode2)
-  // })
-
-  //console.log(hoverWifiSpecific)
-  //alert(hoverWifiAll['hash_postcode'][0]['postcode']); 
-  //alert(hoverWifiAll.hash_postcde[0]['postcode']);    //style 2
-  //alert(hoverWifiAll.hash_postcde[0].postcode);    //style 3
-
+  var infowindow = null;
   mapApp = {
     positionMarker: null, 
     initializeMap: function(){
@@ -74,61 +56,36 @@ $(document).ready(function(){
         center:new google.maps.LatLng(51.508742, -0.120850),
         mapTypeId:google.maps.MapTypeId.ROADMAP
       };
-      canvas = $('#googleMap')[0];
-      map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-      var geocoder = new google.maps.Geocoder();
-      $.each(window.markers_info, function(i, network){
-        var infowindow = new google.maps.InfoWindow({
-            content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='/wifis/"+network.wifi_id+"/edit'>Reviews</a> | <a href='/wifis/"+network.wifi_id+"/add_favourite'>Add to favourite</a>"+"</div>"
-          });
-        geocoder.geocode( {'address': network.postcode }, function(data, status) { 
-          longP = data[0].geometry.location.B
-          latP = data[0].geometry.location.k
-          var found = new google.maps.LatLng(latP, longP)
-          var wifimarker = new google.maps.Marker({
-            position: found,
-            map: map,
-            title: network.business_name
-          });
-          google.maps.event.addListener(wifimarker, 'click', function() {
-                infowindow.open(map,wifimarker);
+      canvas = document.getElementById('googleMap');
+      console.log("canvas", canvas)
+      if(canvas != null){
+        map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        var geocoder = new google.maps.Geocoder();
+        $.each(window.markers_info, function(i, network){
+          infowindow = new google.maps.InfoWindow({
+              content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='/wifis/"+network.wifi_id+"/edit'>Reviews</a> | <a href='/wifis/"+network.wifi_id+"/add_favourite'>Add to favourite</a>"+"</div>"
             });
-        });
-      })
+          geocoder.geocode( {'address': network.postcode }, function(data, status) { 
+            longP = data[0].geometry.location.B
+            latP = data[0].geometry.location.k
+            var found = new google.maps.LatLng(latP, longP)
+            var wifimarker = new google.maps.Marker({
+              position: found,
+              map: map,
+              title: network.business_name
+            });
+            google.maps.event.addListener(wifimarker, 'click', function() {
+                  if(infowindow != null){
+                    infowindow.close()
+                  }
+                  infowindow.open(map,wifimarker);
+              });
+          });
+        })  
+      }
+      
     },
-
-  // var wifiLatlng1 = new google.maps.LatLng(51.475434,-0.155789);
-  // var wifiLatlng2 = new google.maps.LatLng(51.565449,-0.01215)
-  // var wifiLatlng3 = new google.maps.LatLng(51.536479,-0.136149)
-  // var locations = []
-
-  // locations.push(wifiLatlng1, wifiLatlng2, wifiLatlng3)
-
-  // //array = [[51.475434,-0.155789],[51.565449,-0.01215],[51.536479,-0.136149]]
-  // //
-
-  // mapApp = {
-  //   positionMarker: null, 
-  //   initializeMap: function(){
-  //     mapOptions = {
-  //       zoom:8,
-  //       center:new google.maps.LatLng(51.508742, -0.120850),
-  //       mapTypeId:google.maps.MapTypeId.ROADMAP
-  //     };
-  //     canvas = $('#googleMap')[0];
-  //     map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
-  //     // searchBox.bindTo('bounds', map);
-  //     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  //     locations.forEach(function(markerpoint){
-  //       var wifimarker = new google.maps.Marker({
-  //       position: markerpoint,
-  //       map: map,
-  //       title: 'Hello World!'
-  //       });
-  //     });
-  //   },
 
     autocomplete: function(){
       var place = searchBox.getPlaces()[0];
@@ -155,30 +112,6 @@ $(document).ready(function(){
       infowindow.setContent('<div><strong' + place.name + '<strong><br>' + address + '</div>');
       infowindow.open(map, marker);
     },
-    // directions: function(){
-    //   var from = $('#directions_from').val();
-    //   var to = $('#directions_to').val();
-    //   var mode = $('#directions_mode').val();
-
-    //   var request = {
-    //     origin: from,
-    //     destination: to,
-    //     travelMode: google.maps.TravelMode[mode]
-    //   }
-    //   directionsService = new google.maps.DirectionsService();
-    //   directionsDisplay = new google.maps.DirectionsRenderer();
-    //   directionsDisplay.setMap(map);
-    //   directionsService.route(request, function(response, status){
-    //     if(status == google.maps.DirectionsStatus.OK){
-    //       directionsDisplay.setDirections(response);
-    //       $('#directions-panel').html();
-    //       directionsDisplay.setPanel(document.getElementById('directions-panel'))
-    //     }else{
-    //       alert('Something went wrong');
-    //     }
-    //   })
-    // },
-
     updateLocation: function(position){
       if(mapApp.positionMarker != null){
         mapApp.positionMarker.setMap(null)
@@ -225,5 +158,21 @@ $(document).ready(function(){
   });
 
   mapApp.initializeMap();
+  $("#burger-container-div").on('click', function() {
+    $("#burger-menu").slideToggle()
+  });
 
+  $('#header-div1').on('click', function(){
+    if(!!$("#map-container").length){
+      if(navigator.geolocation){
+        mapApp.geolocation();
+      }else{
+        alert('Geolocation not available in this browser');
+      }
+    }
+    else{
+      document.location.href = "/"
+    }
+    
+  });
 })

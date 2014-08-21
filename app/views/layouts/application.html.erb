@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>WIFIND_APP</title>
-  <!-- <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"> -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
   <%= stylesheet_link_tag  "application", :media => "all" %>
   
@@ -42,6 +41,18 @@
     <main>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+
+      <ul class="hide-elements" id="burger-menu">
+        <li><%= link_to "HOME", root_path, {:style=>'color:#FFFFFF;'} %></li>
+        <li>
+          <% if current_user %>
+          <%= link_to "MY PROFILE", user_path(current_user), {:style=>'color:#FFFFFF;'} %>
+          <% else %>
+          <%= link_to "MY PROFILE", login_path, {:style=>'color:#FFFFFF;'} %>
+          <% end %>
+        </li>
+        <li><%= link_to "ADD A WIFI", new_wifi_path, {:style=>'color:#FFFFFF;'}%></li>
+      </ul>
 
     
       <%= yield %>
