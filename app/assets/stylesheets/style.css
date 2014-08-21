@@ -89,25 +89,6 @@ html, body {
   z-index: 10000000;
 }*/
 
-#header-div3:hover > #dropdowndiv {
-  display: block;
-}
-
-#burger-container-div {
-  display: none;
-  width: 100px;
-  height: 50px;
-  /*border: 1px solid white;*/
-  float: right;
-}
-
-.burger-lines {
-  border: 1px solid white;
-  height: 8px;
-  background: white;
-  margin: 10px 15px;  
-}
-
 main {
   min-height: 70vh;
   color: #1f8dd6;
@@ -192,6 +173,21 @@ tr {
   font-size: 14px;
   text-align: left; 
 }
+  
+#burger-container-div {
+  display: none;
+}
+
+.burger-lines {
+  border: 1px solid white;
+  height: 8px;
+  background: white;
+  margin: 10px 15px;  
+}
+
+#burger-menu {
+  display: none;
+} 
 
 /* Large Devices, Wide Screens */
 /*@media only screen and (max-width : 1200px) {
@@ -231,12 +227,40 @@ tr {
     float: left;
     width: 100%;
     padding-top: 25px;
-    padding-left: 150px;
-    text-align: left;
+    text-align: center;
+    position: relative;
+  }
+   #burger-container-div {
+      display: block;
+      float: right;
+      width: 85px;
+      height: 50px;
+      position: absolute;
+      top: 17px;
+      right: 0px;
+      cursor: pointer;
   }
   #header-div2 img {
     width: 10%;
   }
+  .hide-elements {
+    display: none;
+  }
+  #burger-menu li {
+    background: #1f8dd6;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+
+  #burger-menu li a {
+    display: block;
+    width: 100%;
+  }
+
+  .FOOTER-DIV {
+    display: none;
+  }
+ 
 }
 
 /* Custom, iPhone Retina */ 
