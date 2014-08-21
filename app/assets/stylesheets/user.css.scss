@@ -86,6 +86,10 @@
   clear: left;
 }
 
+#accordion-wifi {
+  border: 1px solid #1f8dd6;
+}
+
 .user-form {
   width:600px;
   float: left;
@@ -108,4 +112,8 @@
 
 .clear {
   clear: both;
+}
+
+#user-group-header {
+  border: 1px solid #1f8dd6;
 }

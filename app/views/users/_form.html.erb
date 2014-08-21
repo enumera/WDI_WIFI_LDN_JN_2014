@@ -49,11 +49,13 @@
     <%= f.text_field :phone %>
   </div>
 
+<ul>
   <% Group.all.each do |group| %>
-    <%=group.name %>
-    <%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
+      <li><%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
+        <%=group.name %></li>
     <% end %>
-    <%= paginate @reviews %>
+    <%#= paginate @reviews %>
+<ul>
   <div class="action">
     <%= f.submit %>
     <% end %>
@@ -67,7 +69,15 @@
 
 
 <div id="user-form-right">
-<div class="profile-div user-side">CREATE NETWORK</div>
+<div class="profile-div user-side"><%= link_to "ADD A NEW NETWORK", new_wifi_path %></div>
 
 <div class="profile-div user-side">CREATE A GROUP</div>
+<%= form_for Group.new do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :group_type %>
+      <%= f.select :group_type, options_for_select([:private, :public]) %><br>
+      <%= f.submit "create" %>
+    <% end %>
 </div>
