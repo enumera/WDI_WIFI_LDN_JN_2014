@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(:version => 20140821151817) do
     t.string   "city"
     t.string   "postcode"
     t.string   "country"
-    t.integer  "phone"
+    t.string   "phone"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "venue_type_id"

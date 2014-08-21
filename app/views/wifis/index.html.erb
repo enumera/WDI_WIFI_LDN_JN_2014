@@ -1,22 +1,10 @@
-<h1>Wifi Networks:</h1>
-
-  <!--   Name
-    Password
-    Free or paid
-    Share scope
-    Business name
-    Address line 1
-    Address line 2
-    City
-    Postcode
-    Country
-    Phone -->
+<h1>Wifi Networks:</h1> 
   
 <dl class="accordion">
 
     <% @wifis.each do |wifi| %>
     
-    <dt><a href="">Panel 1</a></dt>
+    <dt><a href=""><%= wifi.name %></a></dt>
     <dd>
         <%= link_to(wifi.name, wifi) %>
         <%= wifi.password %>
