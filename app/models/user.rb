@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :user_type_id, :first, :last, :dob, :sex, :occupation, :position, :image, :role,
-  :phone, :uid, :provider, :group_ids
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :user_type_id, :first, :last, :dob, :sex, :occupation, :position, :image, :role, :phone, :uid, :provider, :group_ids
   # attr_accessible :title, :body
 
   belongs_to :user_type

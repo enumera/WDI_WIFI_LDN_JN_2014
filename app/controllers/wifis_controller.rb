@@ -57,6 +57,11 @@ class WifisController < ApplicationController
   def create
     @wifi = Wifi.new(params[:wifi])
     @wifi.users << current_user
+    groups_to_wifi =  params[:user][:group_ids]
+
+    groups_to_wifi.each do |group|
+        @wifi.groups << Group.find(group)
+      end
 
 
     binding.pry

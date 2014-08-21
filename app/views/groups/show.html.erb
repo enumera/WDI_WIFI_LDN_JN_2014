@@ -6,7 +6,8 @@
 
      <% @wifis.each do |wifi| %>
           <%=wifi.name %>
-          <%=wifi.password %>
+          
+           <%= link_to 'Add this wifi to my favourites', add_favourite_wifi_path(wifi)%>
         <%end%>
       
 </p>

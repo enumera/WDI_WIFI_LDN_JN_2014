@@ -15,16 +15,8 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
-      wifis_to_get = []
-        @group.users.each do |user|
-          user.wifis.each do |wifi|
+    @wifis = @group.wifis
 
-        wifis_to_get.push(wifi)
-      end
-    end
-  
-       wifis_to_get.uniq!
-      @wifis = wifis_to_get
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @group }
