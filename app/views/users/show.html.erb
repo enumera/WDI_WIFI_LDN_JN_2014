@@ -1,15 +1,21 @@
 <div id="profile-page-wrapper">  
 <section>
-  <div class="profile-header">
+  <div class="user-group-header">
     <p>MY PROFILE PAGE:</p>
+    </div>
     <br>
-    <p><%= @user.first %> <%= @user.last%></p>  
-  </div>
+    
+  
 
 
   <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
   <div class="profile-summary">
+
     <table>
+        <tr>
+          <td>Name: </td>
+           <td><%= @user.first %> <%= @user.last%></td> 
+         </tr>
         <tr>
           <td>Sex:</td>
           <td><%= @user.sex %></td>
@@ -37,18 +43,19 @@
       </table>
   </div>
 </section>
+<section class="profile container">
+<div>
+  <%=link_to "Edit my profile", edit_user_path(current_user) %>
+</div>
+</section>
 <section class="profile-container">
  <div class="semi-container-left">
     <div class="profile-div">MY FAVOURITE NETWORKS:</div>
     <div id="accordion-wifi">
       <%  @wifis.each do |wifi| %>
-        <h3 id="accordion-wifi"><%= wifi.name %></h3>
+        <h3><%= wifi.name %></h3>
         <div>
           <table>
-            <tr>
-              <td>Name:</td>
-              <td><%= link_to wifi.name, edit_wifi_path(wifi.id) %></td>
-            </tr>
             <tr>
               <td>Password:</td>
               <td><%= wifi.password %></td>
@@ -117,10 +124,18 @@
     <div class="profile-div">MY GROUPS:</div>
    <!--  <div id="accordion-group"> -->
       <% @groups.each do |group| %>
-        <table>
-          <tr><h3 id="user-group-header"><%= link_to(group.name, group)%>
-          <%=group.group_type%></h3></tr>
-        </table>
+        <%= link_to(group.name, group)%>
+        <%=group.group_type%>
+
+        <br>
+        <div>
+          <table>
+            <tr>
+              <td>photo</td>
+              <td>name</td>
+            </tr>
+          </table>
+        </div>
      <%end%>
         <%= paginate @groups %>
    <!--  </div> -->
