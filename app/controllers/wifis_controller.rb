@@ -34,6 +34,10 @@ class WifisController < ApplicationController
   # GET /wifis/new.json
   def new
     @wifi = Wifi.new
+    @user = current_user
+    @groups = Group.where(group_type: "public")
+    @groups << current_user.groups
+    @groups.flatten!.uniq!
 
     respond_to do |format|
       format.html # new.html.erb

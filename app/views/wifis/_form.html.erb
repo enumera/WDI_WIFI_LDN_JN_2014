@@ -76,6 +76,12 @@
       <%= f.label :phone %><br />
       <%= f.text_field :phone %>
     </div>
+  
+    <h3> Which one of your groups to want to assign this new wifi ?</h3>
+      <% @groups.each do |group| %>
+      <li><%= check_box_tag 'user[group_ids][]', group.id, @user.groups.include?(group), id: "user_groups_ids_#{group.id}" %>
+        <%=group.name %></li>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

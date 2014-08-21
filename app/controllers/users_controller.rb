@@ -16,8 +16,10 @@
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-     @wifis = @user.wifis
-      @groups = @user.groups.order(:created_at).page(params[:page])
+    @wifis = @user.wifis
+    @groups = @user.groups.order(:created_at).page(params[:page])
+
+
       # binding.pry
       # if !params[:group_name].nil?
       #   @group = Group.create(name: params[:group_name])
@@ -49,7 +51,6 @@
     @groups = Group.where(group_type: "public")
     @groups << current_user.groups
     @groups.flatten!.uniq!
-
 
   end
 
