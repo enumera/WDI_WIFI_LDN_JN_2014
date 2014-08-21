@@ -2,15 +2,16 @@
 
 <p>
   <b>Name:</b>
-  <%= @group.name %> <br>
+  <em><%= @group.name %></em> <br>
 
      <% @wifis.each do |wifi| %>
-          <%=wifi.name %>
-          <%=wifi.password %>
+
+          <em>Wifi Name</em> <%=wifi.name %> 
+           <%= link_to 'Add this wifi to my favourites', add_favourite_wifi_path(wifi)%> </br>
         <%end%>
       
 </p>
 
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to 'back to your profile', user_path(current_user) %>
