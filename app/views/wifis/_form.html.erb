@@ -31,7 +31,20 @@
     <div class="field">
     <%= f.label :venue_type_id %><br >
     <%= f.collection_select :venue_type_id, VenueType.all, :id, :name %>
-    </div>    
+    </div>  
+      <div class="field">
+      <%= f.label :powerpoint %><br />
+      <%= f.number_field :powerpoint %>
+    </div>  
+     <div class="field">
+      <%= f.label :number_of_seats %><br />
+      <%= f.number_field :number_of_seats %>
+    </div> 
+
+      <div class="field">
+    <%= f.label :reservation_possible %><br />
+    <%= f.check_box :reservation_possible %>
+  </div>
   </div>
   <div id="rightdiv">
 
@@ -61,7 +74,7 @@
     </div>
     <div class="field">
       <%= f.label :phone %><br />
-      <%= f.number_field :phone %>
+      <%= f.text_field :phone %>
     </div>
   </div>
   <div class="actions">
@@ -75,7 +88,7 @@
             <% if @reviews.size == 0 %>
               <p> There are no comments for this wifi </p>
             <%else%>
-              <% @reviews.each do |review| %>
+              <% @reviews.each do |reviejw| %>
               <%= review.comment %><br>
               <% end %>
               <%= paginate @reviews %>
