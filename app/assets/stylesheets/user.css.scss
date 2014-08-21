@@ -9,6 +9,7 @@
 
 section {
   float: left;
+  margin-bottom: 68px;
 }
 
 #user-form-left {
@@ -73,8 +74,9 @@ ul {
 }
 
 .profile-image {
-  display: inline-block;
-  margin: 0 0 0 180px;
+  /*display: inline-block;
+  margin: 0 0 0 170px;*/
+  float: right;
 }
 
 .profile-summary {
@@ -159,7 +161,15 @@ em {
   clear: both;
 }
 
-/*#user-group-header {
-  border: 1px solid #1f8dd6;
-}*/
+#edit-profile-div {
+  width: 60%;
+  text-align: center; 
+  background: #1f8dd6;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  display: inline-block;
+}
 

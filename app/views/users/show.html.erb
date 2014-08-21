@@ -4,8 +4,7 @@
   <div class="profile-header">
     <p>MY PROFILE PAGE</p>
     <p><%= @user.first %> <%= @user.last%></p>
-
-
+    
    <section>
       <ul>
         <li><em>Sex: </em><%= @user.sex %></li>
@@ -15,21 +14,16 @@
         <li><em>Role: </em><%= @user.role %></li>
         <li><em>Phone number: </em><%= @user.phone %></li>
       </ul>
-    </section>  
+    </section>
   </div>
 
-  <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
+  <div class="profile-image"><%= image_tag @user.image.detail.url, width: 385 %></div>
 
-
-  <div class="profile-summary clearfix">
-   
+  <div id="edit-profile-div">
+    <%=link_to "EDIT MY PROFILE", edit_user_path(current_user), {:style=>'color:#FFFFFF;'} %>
   </div>
 
-    <div class>
-      <%=link_to "Edit my profile", edit_user_path(current_user) %>
-  
-  </div>
-
+  <div class="profile-summary clearfix"></div>
 
 <section class="profile-container">
  <div class="semi-container-left">
@@ -49,12 +43,10 @@
             <li><em>Address Line 2: </em><%= wifi.address_line_2 %></li>
             <li><em>City: </em><%= wifi.city %></li>
             <li><em>Country: </em><%= wifi.country %></li>
-             <li><em>Powerpoints: </em><%= wifi.powerpoint %></li>
-              <li><em>Number of seats: </em><%= wifi.number_of_seats %></li>
-               <li><em>Reservation possible ?: </em><%= wifi.reservation_possible %></li>
-
+            <li><em>Powerpoints: </em><%= wifi.powerpoint %></li>
+            <li><em>Number of seats: </em><%= wifi.number_of_seats %></li>
+            <li><em>Reservation possible ?: </em><%= wifi.reservation_possible %></li>
           </ul>
-
         </div>
       <% end %>
     </div>
@@ -71,22 +63,12 @@
 <section class="profile-container">
   <div class="semi-container-left">
     <div class="profile-div">MY GROUPS:</div>
-   <!--  <div id="accordion-group"> -->
       <% @groups.each do |group| %>
-        <%= link_to(group.name, group)%>
-        <%=group.group_type%>
+        <%= link_to(group.name, group)%>: <%= group.group_type%>
         <br>
-        <div>
-          <table>
-            <tr>
-              <td>photo</td>
-              <td>name</td>
-            </tr>
-          </table>
-        </div>
-     <%end%>
+        <%end%>
         <%= paginate @groups %>
-   <!--  </div> -->
+        <br>
   </div>
   <div class="semi-container-right">
     <div class="add-more">ADD GROUP</div>
@@ -95,9 +77,8 @@
         <%= f.text_field :name %>
         <%= f.label :group_type %>
         <%= f.select :group_type, options_for_select([:private, :public]) %><br>
-        <%= f.submit "create" %>
+        <%= f.submit "Create" %>
       <% end %>
-    <!-- Andy content here -->
   </div>
 <div class="clear"></div>
   </section>
