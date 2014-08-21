@@ -7,8 +7,8 @@ $(document).ready(function(){
   $( "#user_dob" ).datepicker();
 
   // Gwen's accordion code
-  $( "#accordion-wifi" ).accordion();
-  $( "#accordion-group" ).accordion();
+  $( "#accordion-wifi" ).accordion({ collapsible: true, active: false });
+  $( "#accordion-group" ).accordion({ collapsible: true, active: false });
  
   // Tom's accordion below
 
@@ -150,11 +150,17 @@ $(document).ready(function(){
 
   //Geolocation event listener;
   $('#header-div1').on('click', function(){
-    if(navigator.geolocation){
-      mapApp.geolocation();
-    }else{
-      alert('Geolocation not available in this browser');
+    if(!!$("#map-container").length){
+      if(navigator.geolocation){
+        mapApp.geolocation();
+      }else{
+        alert('Geolocation not available in this browser');
+      }
     }
+    else{
+      document.location.href = "/"
+    }
+    
   });
 
   mapApp.initializeMap();
