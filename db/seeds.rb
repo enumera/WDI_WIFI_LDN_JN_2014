@@ -196,8 +196,10 @@ u30 = User.create(email: "graham_curl@email.com", password: "password", password
 
 
 w25 = Wifi.create(name: "Regency Cafe - Guest", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, share_scope: "public", business_name: "Regency Cafe", address_line_1: "17-19 Regency Street", city: "London", postcode: "SW1P 4BY", country: "UK", phone: "020 7821 6596", powerpoint: 2, number_of_seats: 30, reservation_possible: true, overall_rating: 3)
+# Marker showing but no data here
 
 w26 = Wifi.create(name: "The Harp - Welcome", password: "^UYnbFUVJK", free_or_paid: true, share_scope: "public", business_name: "The Harp", address_line_1: "47 Chandos Place", address_line_2: "Covent Garden", city: "London", postcode: "WC2N 4HS", country: "UK", phone: "020 7836 0291", powerpoint: 1, number_of_seats: 30, reservation_possible: true, overall_rating: 2)
+# Marker showing but no data here
 
 w27 = Wifi.create(name: "Gordon Ramsay Wifi", password: "GR^UYnbFUVJK", free_or_paid: true, share_scope: "private", business_name: "Gordon Ramsay", address_line_1: "Unit 68", address_line_2: "69 Royal Hospital Road", city: "London", postcode: "SW3 4HP", country: "UK", phone: "020 7352 4441", powerpoint: 4, number_of_seats: 50, reservation_possible: true, overall_rating: 4)
 
@@ -244,6 +246,18 @@ r9 = Review.create(comment: "It's ok until everyone works on CSS - that's a wast
 r10 = Review.create(comment: "wby is great when we are outside and can longer get access to GA-Guest")
 r11 = Review.create(comment: "As long the internet works, it's all good.")
 
+r1.user = u22
+r2.user = u26
+r3.user = u23
+r4.user = u27
+r5.user = u28
+r6.user = u29
+r7.user = u25
+r8.user = u24
+r9.user = u30
+r10.user = u22
+r11.user = u21
+
 r1.wifi = w39
 r2.wifi = w38
 r3.wifi = w36
@@ -256,14 +270,14 @@ r9.wifi = w36
 r10.wifi = w37
 r11.wifi = w36
 
-r1.user = u22
-r2.user = u26
-r3.user = u23
-r4.user = u27
-r5.user = u28
-r6.user = u29
-r7.user = u25
-r8.user = u24
-r9.user = u30
-r10.user = u22
-r11.user = u21
+w39.reviews << r1
+w38.reviews << r2
+w36.reviews << r3
+w40.reviews << r4
+w39.reviews << r5
+w39.reviews << r6
+w39.reviews << r7
+w36.reviews << r8
+w36.reviews << r9
+w37.reviews << r10
+w36.reviews << r11

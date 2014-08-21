@@ -4,7 +4,7 @@ module ApplicationHelper
         {
           wifi_id: wifi.id,
           business_name: wifi.business_name,
-          reviews: wifi.reviews.map(&:overall_rating),
+          reviews: wifi.overall_rating,
           share_scope: wifi.share_scope,
           postcode: wifi.postcode
         }
