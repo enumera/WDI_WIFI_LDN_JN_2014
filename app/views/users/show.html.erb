@@ -49,9 +49,9 @@
             <li><em>Address Line 2: </em><%= wifi.address_line_2 %></li>
             <li><em>City: </em><%= wifi.city %></li>
             <li><em>Country: </em><%= wifi.country %></li>
-             <li><em>Powerpoints: </em><%= wifi.powerpoint %></li>
-              <li><em>Number of seats: </em><%= wifi.number_of_seats %></li>
-               <li><em>Reservation possible ?: </em><%= wifi.reservation_possible %></li>
+            <li><em>Powerpoints: </em><%= wifi.powerpoint %></li>
+            <li><em>Number of seats: </em><%= wifi.number_of_seats %></li>
+            <li><em>Reservation possible ?: </em><%= wifi.reservation_possible %></li>
 
           </ul>
 
@@ -75,15 +75,9 @@
       <% @groups.each do |group| %>
         <%= link_to(group.name, group)%>
         <%=group.group_type%>
+        <%=group.wifis.size%>
         <br>
-        <div>
-          <table>
-            <tr>
-              <td>photo</td>
-              <td>name</td>
-            </tr>
-          </table>
-        </div>
+        
      <%end%>
         <%= paginate @groups %>
    <!--  </div> -->
