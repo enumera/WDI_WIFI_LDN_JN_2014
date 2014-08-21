@@ -20,7 +20,9 @@ class User < ActiveRecord::Base
    validates :last, presence: true
 
 
-
+  validates :email, uniqueness: true, on: :create
+  validates :first, presence: true
+  validates :last, presence: true
   
 def self.find_for_google_oauth2(auth, signed_in_user=nil)
   if user = signed_in_user || User.find_by_email(auth.info.email)

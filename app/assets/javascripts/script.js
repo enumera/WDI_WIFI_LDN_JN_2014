@@ -3,6 +3,9 @@
 
 $(document).ready(function(){
 
+  // Date picker jquery UI
+  $( "#user_dob" ).datepicker();
+
   // Gwen's accordion code
   $( "#accordion-wifi" ).accordion();
   $( "#accordion-group" ).accordion();
