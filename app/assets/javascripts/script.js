@@ -7,8 +7,8 @@ $(document).ready(function(){
   $( "#user_dob" ).datepicker();
 
   // Gwen's accordion code
-  $( "#accordion-wifi" ).accordion();
-  $( "#accordion-group" ).accordion();
+  $( "#accordion-wifi" ).accordion( { collapsible: true, active: false });
+  $( "#accordion-group" ).accordion({ active: false });
  
   // Tom's accordion below
 
