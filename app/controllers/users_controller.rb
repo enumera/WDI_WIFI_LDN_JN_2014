@@ -49,7 +49,7 @@ class UsersController <ApplicationController
     @groups = Group.where(group_type: "public")
     @groups << current_user.groups
     @groups.flatten!.uniq!
-    binding.pry
+
 
   end
 
