@@ -85,6 +85,15 @@
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+      # groups_to_user =  params[:user][:group_ids]
+
+      #     groups_to_user.each do |group|
+      #       @user.groups << Group.find(group)
+          
+      #     end
+            
+
+    
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

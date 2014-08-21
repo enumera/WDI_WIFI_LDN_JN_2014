@@ -50,25 +50,32 @@ class WifisController < ApplicationController
     @wifi = Wifi.find(params[:id])
     # @reviews = @wifi.reviews.order(:created_at).pages(params[:page])
     @reviews = @wifi.reviews.page(params[:page])
+    @groups = @wifi.groups
   end
 
   # POST /wifis
   # POST /wifis.json
   def create
+    
     @wifi = Wifi.new(params[:wifi])
-    @wifi.users << current_user
-      groups_to_wifi =  params[:user][:group_ids]
-
-      groups_to_wifi.each do |group|
-        @wifi.groups << Group.find(group)
-      end
+  
     respond_to do |format|
       if @wifi.save
+           @wifi.users << current_user
+            groups_to_wifi =  params[:user][:group_ids]
+
+          groups_to_wifi.each do |group|
+            @wifi.groups << Group.find(group)
+            @wifi.save
+          end
+        
         format.html { redirect_to edit_wifi_path(@wifi), notice: 'Wifi was successfully created.' }
         format.json { render json: edit_wifi_path(@wifi), status: :created, location: @wifi }
       else
-        format.html { render action: "new" }
-        format.json { render json: @wifi.errors, status: :unprocessable_entity }
+       
+
+        format.html { redirect_to new_wifi_path }
+        format.json { redirect_to new_wifi_path json: @wifi.errors, status: :unprocessable_entity }
       end
     end
   end
