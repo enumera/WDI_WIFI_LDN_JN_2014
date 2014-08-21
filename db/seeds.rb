@@ -207,6 +207,27 @@ u19 = User.create(email: "laura_hastings", password: "password", password_confir
 
 w25 = Wifi.create(name: "Regency Cafe - Guest", password: "5789nfniqjt&**^UYnbFUVJK", free_or_paid: true, share_scope: "public", business_name: "Regency Cafe", address_line_1: "17-19 Regency Street", city: "London", postcode: "SW1P 4BY", country: "UK", phone: "020 7821 6596")
 
+w26 = Wifi.create(name: "The Harp - Welcome", password: "^UYnbFUVJK", free_or_paid: true, share_scope: "public", business_name: "The Harp", address_line_1: "47 Chandos Place", address_line_2: "Covent Garden", city: "London", postcode: "WC2N 4HS", country: "UK", phone: "020 7836 0291")
+
+w27 = Wifi.create(name: "Gordon Ramsay Wifi", password: "GR^UYnbFUVJK", free_or_paid: true, share_scope: "private", business_name: "Gordon Ramsay", address_line_1: "Unit 68", address_line_2: "69 Royal Hospital Road", city: "London", postcode: "SW3 4HP", country: "UK", phone: "020 7352 4441")
+
+w28 = Wifi.create(name: "Barrafina Wifi", password: "barrafinapeople", free_or_paid: true, share_scope: "private", business_name: "Barrafina", address_line_1: "54 Frith Street", address_line_2: "Soho", city: "London", postcode: "W1D 4SL", country: "UK", phone: "020 7352 4441")
+
+w29 = Wifi.create(name: "Franco Manca Guest", password: "fmguest", free_or_paid: true, share_scope: "public", business_name: "Franco Manca", address_line_1: "4 Market Row", address_line_2: "Electric Lane", city: "London", postcode: "SW9 8LD", country: "UK", phone: "020 7738 3021")
+
+w30 = Wifi.create(name: "The Ledbury Guest", password: "lguest", free_or_paid: true, share_scope: "public", business_name: "The Ledbury", address_line_1: "127 Ledbury Road", address_line_2: "Notting Hill", city: "London", postcode: "W11 2AQ", country: "UK", phone: "020 7792 9090")
+
+w31 = Wifi.create(name: "Casa Don Carlos Public", password: "micasasucasa", free_or_paid: true, share_scope: "public", business_name: "Casa Don Carlos", address_line_1: "5 Union Street", city: "Brighton", postcode: "BN1 1HA", country: "UK", phone: "01273 327177")
+
+w32 = Wifi.create(name: "Sukhothai Public", password: "thaistyle", free_or_paid: true, share_scope: "public", business_name: "Sukhothai", address_line_1: "15 South Parade", city: "Leeds", postcode: "LS1 5QS", country: "UK", phone: "0113 242 2795")
+
+w33 = Wifi.create(name: "Gaucho Grill Public", password: "publicgg", free_or_paid: true, share_scope: "public", business_name: "Gaucho Grill", address_line_1: "2a St Marys Street", city: "Manchester", postcode: "M3 2LB", country: "UK", phone: "0161 833 4333")
+
+w34 = Wifi.create(name: "Field Guest", password: "fieldguest", free_or_paid: true, share_scope: "public", business_name: "Field", address_line_1: "2a St Marys Street", city: "Manchester", postcode: "M3 2LB", country: "UK", phone: "0161 833 4333")
+
+w35 = Wifi.create(name: "Banana Leaf private", password: "banana", free_or_paid: false, share_scope: "public", business_name: "Banana Leaf", address_line_1: "67 Cambridge Street", city: "Glasgow", postcode: "G3 6QX", country: "UK", phone: "0141 333 9994")
+
+
 
 
 
