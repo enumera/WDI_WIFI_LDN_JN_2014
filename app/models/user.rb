@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :wifis
 
   mount_uploader :image, ProfileImageUploader
+   validates :email, presence: true, uniqueness: true
+   validates :first, presence: true
+   validates :last, presence: true
+
 
 
   
@@ -30,7 +34,8 @@ def self.find_for_google_oauth2(auth, signed_in_user=nil)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
-      # user.name = auth.info.name
+      user.first = auth.info.first
+      user.last = auth.info.last
       user.email = auth.info.email
       # user.image = auth.info.image
       user.password = Devise.friendly_token[0,20]
