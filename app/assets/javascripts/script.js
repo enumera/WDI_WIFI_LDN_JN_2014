@@ -189,5 +189,23 @@ $(document).ready(function(){
       document.location.href = "/"
     } 
   });
+
+  $('#wifi-near-me-image-button').click(function(){
+    $('#wifi-near-me-image-button').effect("pulsate", {times:3}, 3000);
+  });
+
+
+  $('#wifi-near-me-image-button').on('click', function(){
+    if(!!$("#map-container").length){
+      if(navigator.geolocation){
+        mapApp.geolocation();
+      }else{
+        alert('Geolocation not available in this browser');
+      }
+    }
+    else{
+      document.location.href = "/"
+    } 
+  });
  
 })

@@ -180,9 +180,9 @@ tr {
 
 .burger-lines {
   border: 1px solid white;
-  height: 8px;
+  height: 4px;
   background: white;
-  margin: 10px 15px;  
+  margin: 8px 5px;  
 }
 
 #burger-menu {
@@ -229,30 +229,34 @@ tr {
     padding-top: 25px;
     text-align: center;
     position: relative;
+    margin: 0 auto;
   }
    #burger-container-div {
-      display: block;
-      float: right;
-      width: 85px;
-      height: 50px;
-      position: absolute;
-      top: 17px;
-      right: 0px;
-      cursor: pointer;
+    display: block;
+    float: right;
+    width: 50px;
+    height: 48px;
+    position: absolute;
+    top: 27px;
+    right: 20px;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
   }
   #header-div2 img {
     width: 10%;
+    cursor: pointer;
   }
   .hide-elements {
     display: none;
   }
   #burger-menu li {
     background: #1f8dd6;
-    margin: 10px 0;
-    padding: 10px 0;
     color: white;
     cursor: pointer;
     text-align: center;
+    margin: 10px 0;
+    padding: 10px;
   }
 
   #burger-menu li a {
@@ -260,7 +264,7 @@ tr {
     width: 100%;
   }
 
-  .FOOTER-DIV {
+  #footer-wrapper-div {
     display: none;
   }
 }
