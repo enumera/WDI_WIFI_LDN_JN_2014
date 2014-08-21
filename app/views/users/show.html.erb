@@ -1,111 +1,55 @@
 <div id="profile-page-wrapper">  
-<section>
-  <div class="profile-header">
-    <p>MY PROFILE PAGE:</p>
-    <br>
-    <p><%= @user.first %> <%= @user.last%></p>  
-  </div>
 
+  <div class="profile-header">
+    <p>MY PROFILE PAGE</p>
+    <p><%= @user.first %> <%= @user.last%></p>
+
+   <section>
+      <ul>
+        <li><em>Sex: </em><%= @user.sex %></li>
+        <li><em>DOB: </em><%= @user.dob %></li>
+        <li><em>Occupation: </em><%= @user.occupation %></li>
+        <li><em>Position: </em><%= @user.position %></li>
+        <li><em>Role: </em><%= @user.role %></li>
+        <li><em>Phone number: </em><%= @user.phone %></li>
+      </ul>
+    </section>  
+  </div>
 
   <div class="profile-image"><%= image_tag @user.image.detail.url, width: 300 %></div>
-  <div class="profile-summary">
-    <table>
-        <tr>
-          <td>Sex:</td>
-          <td><%= @user.sex %></td>
-        </tr>
-        <tr>
-          <td>DOB:</td>
-          <td><%= @user.dob %></td>
-        </tr>
-        <tr>
-          <td>Occupation:</td>
-          <td><%= @user.occupation %></td>
-        </tr>
-        <tr>
-          <td>Position:</td>
-          <td><%= @user.position %></td>
-        </tr>
-        </tr>
-          <td>Role</td>
-          <td><%= @user.role %></td>
-        <tr>
-        <tr>
-          <td>Phone number:</td>
-          <td><%= @user.phone %></td>
-        </tr>
-      </table>
+
+  <div class="profile-summary clearfix">
+   
   </div>
-</section>
+
 <section class="profile-container">
  <div class="semi-container-left">
     <div class="profile-div">MY FAVOURITE NETWORKS:</div>
-    <div id="accordion-wifi">
+    <div id="accordion-wifi" class="accordion-wifi">
       <%  @wifis.each do |wifi| %>
-        <h3 id="accordion-wifi"><%= wifi.name %></h3>
+        <h3 class="accordion-wifi"><%= wifi.name %></h3>
         <div>
-          <table>
-            <tr>
-              <td>Name:</td>
-              <td><%= link_to wifi.name, edit_wifi_path(wifi.id) %></td>
-            </tr>
-            <tr>
-              <td>Password:</td>
-              <td><%= wifi.password %></td>
-            </tr>
-            <tr>
-              <td>Free or Paid:</td>
-              <td><%= wifi.free_or_paid %></td>
-            </tr>
-            <tr>
-              <td>Private or public Network</td>
-              <td><%= wifi.share_scope %></td>
-            </tr>
-            <tr>
-              <td>Business name:</td>
-              <td><%= wifi.business_name %></td>
-            </tr>
-            <tr>
-              <td>Business phone number:</td>
-              <td><%= wifi.phone %></td>
-            </tr>    
-            <tr>
-              <td>Address</td>
-              <td><%= wifi.address_line_1 %></td>
-            </tr> 
-            <tr>
-              <td></td>
-              <td><%= wifi.address_line_2 %></td>
-            </tr> 
-            <tr>
-              <td></td>
-              <td><%= wifi.city %></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><%= wifi.country %></td>
-            </tr>
-              <tr>
-              <td>Powerpoints</td>
-              <td><%= wifi.powerpoint %></td>
-            </tr>
-              <tr>
-              <td>Number of seats</td>
-              <td><%= wifi.number_of_seats %></td>
-            </tr>
-             <tr>
-              <td>Reservation possible ?</td>
-              <td><%= wifi.reservation_possible %></td>
-            </tr>
 
-          </table>
+          <ul> 
+            <li><em>Name: </em><%= link_to wifi.name, edit_wifi_path(wifi.id) %></li>
+            <li><em>Password: </em><%= wifi.password %></li>
+            <li><em>Free or Paid: </em><%= wifi.free_or_paid %></li>
+            <li><em>Private or public Network: </em><%= wifi.share_scope %></li>
+            <li><em>Business name: </em><%= wifi.business_name %></li>
+            <li><em>Tel: </em><%= wifi.phone %></li>
+            <li><em>Address Line 1: </em><%= wifi.address_line_1 %></li>
+            <li><em>Address Line 2: </em><%= wifi.address_line_2 %></li>
+            <li><em>City: </em><%= wifi.city %></li>
+            <li><em>Country: </em><%= wifi.country %></li>
+          </ul>
+
         </div>
       <% end %>
     </div>
   </div>
   <div class="semi-container-right">
     <div class="add-more">
-      <%= link_to "ADD A NEW NETWORK", new_wifi_path %>
+      <%= link_to "ADD A NEW NETWORK", new_wifi_path, {:style=>'color:#FFFFFF;'} %>
     </div>
     <!-- Andy content here -->
   </div>
@@ -127,13 +71,13 @@
   </div>
   <div class="semi-container-right">
     <div class="add-more">ADD GROUP</div>
-    <%= form_for Group.new do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :group_type %>
-      <%= f.select :group_type, options_for_select([:private, :public]) %><br>
-      <%= f.submit "create" %>
-    <% end %>
+      <%= form_for Group.new do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :group_type %>
+        <%= f.select :group_type, options_for_select([:private, :public]) %><br>
+        <%= f.submit "create" %>
+      <% end %>
     <!-- Andy content here -->
   </div>
 <div class="clear"></div>

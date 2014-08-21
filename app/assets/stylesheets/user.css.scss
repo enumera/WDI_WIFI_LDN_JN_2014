@@ -1,10 +1,23 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+section {
+  float: left;
+}
+
 #user-form-left {
-  width: 50%;
+  width: 48%;
   float:left;
 }
 
 #user-form-right {
-  width: 50%;
+  width: 48%;
   float: right;
 }
 
@@ -27,6 +40,13 @@
 }
 
 
+ul {
+  text-align: left;
+  font-size: 25px;
+  margin: 10px 0 2px 0;
+  color: #1f8dd6;
+}
+
 .profile-header {
   text-align: center; 
   color: black;
@@ -34,7 +54,16 @@
   font-size: 60px;
   padding: 0px;
   margin-top: 0px;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.profile-header p:nth-child(2) {
+  text-align: left;
+  font-size: 30px;
+  color: #1f8dd6;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
 #profile-page-wrapper {
@@ -44,11 +73,12 @@
 }
 
 .profile-image {
-  float: right;
+  display: inline-block;
+  margin: 0 0 0 180px;
 }
 
 .profile-summary {
-  float: left;
+  display: inline; 
 }
 
 .profile-container {
@@ -58,7 +88,7 @@
 }
 
 .profile-div {
-/*  width: 66.5%;*/
+  width: 100%;
   text-align: center; 
   background: #1f8dd6;
   color: white;
@@ -66,33 +96,41 @@
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  /*float: left;*/
+  display: inline-block;
 }
 
 .add-more {
-/*  width: 33%;*/
+  width: 100%;
   text-align: center; 
   background: #1f8dd6;
   color: white;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+  /*margin-left: 145px;*/
   font-size: 25px;
-/*  float: right;*/
+  display: inline-block;
 }
 
-.accordian {
-  width: 66.5%;
-  clear: left;
-}
-
-#accordion-wifi {
+.accordion-wifi {
   border: 1px solid #1f8dd6;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+}
+
+em {
+  font-weight: 300;
 }
 
 .user-form {
   width:600px;
   float: left;
+}
+
+#user-form-left form {
+  margin-left: 5px;
+  margin-bottom: 10px;
 }
 
 .new-user-side {
@@ -101,19 +139,26 @@
 }
 
 .semi-container-left {
-  width: 66.5%;
+  width: 60%;
   float: left;
 }
 
 .semi-container-right {
-  width: 33%;
-  float: right;
+  width: 39%;
+  display: inline-block;
+  margin-left: 1%;
+}
+
+.semi-container-right form {
+  margin-left: 15px;
+  margin-bottom: 20px;
 }
 
 .clear {
   clear: both;
 }
 
-#user-group-header {
+/*#user-group-header {
   border: 1px solid #1f8dd6;
-}
+}*/
+

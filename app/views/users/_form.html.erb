@@ -62,14 +62,8 @@
   </div>
 </div>
 
-
- 
-
-
-
-
 <div id="user-form-right">
-<div class="profile-div user-side"><%= link_to "ADD A NEW NETWORK", new_wifi_path %></div>
+<div class="profile-div user-side"><%= link_to "ADD A NEW NETWORK", new_wifi_path, {:style=>'color:#FFFFFF;'} %></div>
 
 <div class="profile-div user-side">CREATE A GROUP</div>
 <%= form_for Group.new do |f| %>
