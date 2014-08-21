@@ -219,7 +219,7 @@ $(document).ready(function(){
     }else{
       alert('Geolocation not available in this browser');
     }
-  })
+  });
 
   mapApp.initializeMap();
 
