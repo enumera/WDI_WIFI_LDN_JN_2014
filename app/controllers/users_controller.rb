@@ -19,11 +19,7 @@
     @wifis = @user.wifis
     @groups = @user.groups.order(:created_at).page(params[:page])
 
-     
-      # if !params[:group_name].nil?
-      #   @group = Group.create(name: params[:group_name])
-      #   @user.groups << @group
-      # end
+    
 
   respond_to do |format|
       format.html # show.html.erb
@@ -37,6 +33,7 @@
   def new
     @user = User.new
 
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -45,6 +42,7 @@
 
   # GET /users/1/edit
   def edit
+  
     @user = User.find(params[:id])
 
     @groups = Group.where(group_type: "public")
@@ -58,12 +56,6 @@
   def create
     @user = User.new(params[:user])
 
-      # groups = Group.where(group_type: "public")
-      # groups.each do |group|
-      #   @user.groups << group
-      # end
-
-    # @user.groups << Group.where(group_type: "public")
     UserMailer.registration_confirmation(@user).deliver
 
     respond_to do |format|
@@ -85,16 +77,7 @@
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-      # groups_to_user =  params[:user][:group_ids]
-
-      #     groups_to_user.each do |group|
-      #       @user.groups << Group.find(group)
-          
-      #     end
-            
-
-    
-
+  
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'Your profile was successfully updated.' }
