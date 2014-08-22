@@ -10,9 +10,9 @@ class Wifi < ActiveRecord::Base
      validates :business_name, presence: true, uniqueness: true
      validates :name, presence: true
      validates :password, presence: true
-     validates :address_line_1, presence: true
-     validates :city, presence: true
-     validates :country, presence: true
+     # validates :address_line_1, presence: true
+     # validates :city, presence: true
+     # validates :country, presence: true
      validates :postcode, presence: true
 
 
