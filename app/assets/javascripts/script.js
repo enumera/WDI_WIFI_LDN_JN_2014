@@ -38,26 +38,29 @@ $(document).ready(function(){
 
   var longP, latP;
 
-  var infowindow = null;
   mapApp = {
-    geocode: function(postcode){
-      geocoder.geocode( {'address': postcode }, function(data, status) { 
-        console.log(data, status)
+    infowindow: null,
+    geocode: function(network){
+      
+
+      geocoder.geocode( {'address': network.postcode }, function(data, status) { 
         var longP = data[0].geometry.location.B
         var latP = data[0].geometry.location.k
         var found = new google.maps.LatLng(latP, longP)
         var wifimarker = new google.maps.Marker({
           position: found,
           map: map,
-          title: network.business_name
+          title: network.business_name,
+          network: network
         });
-        // console.log(longP);
-        // console.log(latP);
         google.maps.event.addListener(wifimarker, 'click', function() {
-              if(infowindow != null){
-                infowindow.close()
+              if(mapApp.infowindow != null){
+                mapApp.infowindow.close()
               }
-              infowindow.open(map,wifimarker);
+              mapApp.infowindow = new google.maps.InfoWindow({
+                content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='/wifis/"+network.wifi_id+"/edit'>Reviews</a> | <a href='/wifis/"+network.wifi_id+"/add_favourite'>Add to favourite</a>"+"</div>"
+              });
+              mapApp.infowindow.open(map,wifimarker);
           });
       });
     },
@@ -75,9 +78,8 @@ $(document).ready(function(){
         map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         
-        console.log("debug", window.markers_info.length);
         var i = 0;
-        var j = 0;
+        
 
 
         var geocodeInterval = setInterval(function(){
@@ -86,24 +88,11 @@ $(document).ready(function(){
             }
             
             network = window.markers_info[i];
-            console.log(network.postcode, i);
-            mapApp.geocode(network.postcode);
+            mapApp.geocode(network);
             i++
           }, 400)
 
-        $.each(window.markers_info, function(i, network){
-          var infowindow = new google.maps.InfoWindow({
-              content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='/wifis/"+network.wifi_id+"/edit'>Reviews</a> | <a href='/wifis/"+network.wifi_id+"/add_favourite'>Add to favourite</a>"+"</div>"
-            });
-          //console.log(infowindow);
-          console.log("here")
-          // console.log(window.markers_info)
-          // console.log(network)
-          console.log(network.postcode)
-          i++
-          console.log(i)
-          
-        })  
+        
       }
       
     },
