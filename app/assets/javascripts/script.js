@@ -33,13 +33,35 @@ $(document).ready(function(){
   });
   var input = $('#pac-input')[0];
   var searchBox = new google.maps.places.SearchBox(input);
-
+  var geocoder = new google.maps.Geocoder();
   // Trying to get wifi marker to appear
 
   var longP, latP;
 
   var infowindow = null;
   mapApp = {
+    geocode: function(postcode){
+      geocoder.geocode( {'address': postcode }, function(data, status) { 
+        console.log(data, status)
+        var longP = data[0].geometry.location.B
+        var latP = data[0].geometry.location.k
+        var found = new google.maps.LatLng(latP, longP)
+        var wifimarker = new google.maps.Marker({
+          position: found,
+          map: map,
+          title: network.business_name
+        });
+        // console.log(longP);
+        // console.log(latP);
+        google.maps.event.addListener(wifimarker, 'click', function() {
+              if(infowindow != null){
+                infowindow.close()
+              }
+              infowindow.open(map,wifimarker);
+          });
+      });
+    },
+
     positionMarker: null, 
     initializeMap: function(){
       mapOptions = {
@@ -52,30 +74,35 @@ $(document).ready(function(){
       if(canvas != null){
         map = new google.maps.Map(canvas, mapOptions); //this line is pure JS
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-        var geocoder = new google.maps.Geocoder();
+        
+        console.log("debug", window.markers_info.length);
+        var i = 0;
+        var j = 0;
+
+
+        var geocodeInterval = setInterval(function(){
+            if(i == window.markers_info.length-1){
+              clearInterval(geocodeInterval)
+            }
+            
+            network = window.markers_info[i];
+            console.log(network.postcode, i);
+            mapApp.geocode(network.postcode);
+            i++
+          }, 400)
+
         $.each(window.markers_info, function(i, network){
           var infowindow = new google.maps.InfoWindow({
               content: "<div>"+network.business_name+" - "+ network.reviews.toString() +" - "+network.share_scope+" - "+" <a href='/wifis/"+network.wifi_id+"/edit'>Reviews</a> | <a href='/wifis/"+network.wifi_id+"/add_favourite'>Add to favourite</a>"+"</div>"
             });
-          console.log(infowindow);
-          geocoder.geocode( {'address': network.postcode }, function(data, status) { 
-            longP = data[0].geometry.location.B
-            latP = data[0].geometry.location.k
-            var found = new google.maps.LatLng(latP, longP)
-            var wifimarker = new google.maps.Marker({
-              position: found,
-              map: map,
-              title: network.business_name
-            });
-            console.log(longP);
-            console.log(latP);
-            google.maps.event.addListener(wifimarker, 'click', function() {
-                  if(infowindow != null){
-                    infowindow.close()
-                  }
-                  infowindow.open(map,wifimarker);
-              });
-          });
+          //console.log(infowindow);
+          console.log("here")
+          // console.log(window.markers_info)
+          // console.log(network)
+          console.log(network.postcode)
+          i++
+          console.log(i)
+          
         })  
       }
       
@@ -103,6 +130,7 @@ $(document).ready(function(){
       if (place.address_components){
         address = (place.address_components[0] && place.address_components[0].short_name || '')
       }
+      var infowindow = new google.maps.InfoWindow();
       infowindow.setContent('<div><strong' + place.name + '<strong><br>' + address + '</div>');
       infowindow.open(map, marker);
     },
