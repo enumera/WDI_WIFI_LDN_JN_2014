@@ -69,8 +69,8 @@ class WifisController < ApplicationController
             @wifi.save
           end
         
-        format.html { redirect_to edit_wifi_path(@wifi), notice: 'Wifi was successfully created.' }
-        format.json { render json: edit_wifi_path(@wifi), status: :created, location: @wifi }
+        format.html { redirect_to user_path(current_user), notice: 'Wifi was successfully created.' }
+        format.json { render json: user_path(current_user), status: :created, location: @wifi }
       else
        
 
