@@ -99,7 +99,7 @@
             <% if @reviews.size == 0 %>
               <p> There are no comments for this wifi </p>
             <%else%>
-              <% @reviews.each do |reviejw| %>
+              <% @reviews.each do |review| %>
               <%= review.comment %><br>
               <% end %>
               <%= paginate @reviews %>

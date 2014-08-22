@@ -19,8 +19,8 @@ class Wifi < ActiveRecord::Base
 
   mount_uploader :image, VenueImageUploader
 
-  validates :business_name, presence: :true, uniqueness: true, on: :create
-  validates :name, presence: true
-  validates :password, presence: true
+  # validates :business_name, presence: :true, uniqueness: true, on: :create
+  # validates :name, presence: true
+  # validates :password, presence: true
 
 end
